@@ -1,0 +1,471 @@
+/* Order Now Section Styles */
+.order-now {
+  position: relative;
+  background: linear-gradient(135deg, #fff8f0 0%, #fff3e6 100%);
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+/* Floating decorative elements */
+.floating-burger,
+.floating-fries {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.floating-burger {
+  top: 10%;
+  left: 5%;
+  background-image: url("../images/burger.png");
+  animation: float 8s ease-in-out infinite;
+}
+
+.floating-fries {
+  top: 15%;
+  right: 5%;
+  background-image: url("../images/burger.png"); /* Replace with fries image if available */
+  animation: float 7s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.order-now .section-title h2 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.order-now .section-title h2::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 4px;
+  background-color: #f35f2a;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.order-now .highlight {
+  color: #f35f2a;
+}
+
+.order-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.order-info,
+.order-form {
+  flex: 1;
+  min-width: 300px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.order-info:hover,
+.order-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Order Info Section */
+.order-info-header {
+  text-align: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.order-info-header h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.food-icon-divider {
+  position: relative;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(243, 95, 42, 0.5),
+    transparent
+  );
+  margin: 15px auto;
+  width: 70%;
+}
+
+.food-icon-divider span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 0 15px;
+  color: #f35f2a;
+  font-size: 20px;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.order-item:hover {
+  background-color: rgba(243, 95, 42, 0.05);
+}
+
+.order-icon {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(243, 95, 42, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.order-icon i {
+  font-size: 20px;
+  color: #f35f2a;
+}
+
+.order-details h4 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.order-details p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+/* Special offer box */
+.special-offer {
+  background: linear-gradient(135deg, #fcb045 0%, #fd1d1d 100%);
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  margin-top: 25px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(252, 176, 69, 0.4);
+}
+
+.special-offer .badge {
+  position: absolute;
+  top: 10px;
+  right: -25px;
+  background-color: #fff;
+  color: #f35f2a;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 25px;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.special-offer h4 {
+  margin: 15px 0 10px;
+  font-size: 18px;
+}
+
+.special-offer p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.special-offer strong {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+/* Form Styling */
+.form-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.form-header h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.form-header p {
+  color: #666;
+  font-size: 15px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.form-row .form-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+  font-size: 15px;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.textarea-icon i {
+  top: 20px;
+  transform: none;
+}
+
+.input-with-icon input,
+.input-with-icon textarea {
+  width: 100%;
+  padding: 12px 15px 12px 40px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  color: #333;
+}
+
+.input-with-icon input:focus,
+.input-with-icon textarea:focus {
+  border-color: #f35f2a;
+  box-shadow: 0 0 0 3px rgba(243, 95, 42, 0.15);
+  outline: none;
+}
+
+.input-with-icon input:focus + i,
+.input-with-icon textarea:focus + i {
+  color: #f35f2a;
+}
+
+.input-with-icon textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Radio buttons styling */
+.payment-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 15px;
+  user-select: none;
+  color: #555;
+  margin-right: 20px;
+  transition: color 0.3s;
+}
+
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.radio-container:hover .radio-checkmark {
+  border-color: #ccc;
+}
+
+.radio-container input:checked ~ .radio-checkmark {
+  border-color: #f35f2a;
+}
+
+.radio-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #f35f2a;
+}
+
+.radio-container input:checked ~ .radio-checkmark:after {
+  display: block;
+}
+
+.radio-container:hover {
+  color: #333;
+}
+
+/* Submit button */
+.form-submit {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.btn.btn-large {
+  padding: 14px 32px;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  background-color: #f35f2a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn.btn-large:hover {
+  background-color: #e64d16;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(243, 95, 42, 0.3);
+}
+
+/* Shine effect on button */
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-effect::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    rgba(255, 255, 255, 0) 10%,
+    rgba(255, 255, 255, 0.2) 20%,
+    rgba(255, 255, 255, 0) 30%
+  );
+  transform: rotate(30deg);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.shine-effect:hover::after {
+  opacity: 1;
+  animation: shine 1.5s forwards;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(30deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(30deg);
+  }
+}
+
+/* Pulse animation */
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(243, 95, 42, 0.4);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(243, 95, 42, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(243, 95, 42, 0);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .order-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .order-now {
+    padding: 70px 0;
+  }
+
+  .floating-burger,
+  .floating-fries {
+    width: 100px;
+    height: 100px;
+  }
+}
