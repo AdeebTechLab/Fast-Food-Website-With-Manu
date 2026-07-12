@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Cart | Domino Fazilpur</title>
+    <link rel="icon" href="assets/images/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600;700;800&family=Dancing+Script:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/cart.css" />
+  </head>
+  <body class="cart-page">
+    <header>
+      <div class="container">
+        <a href="index.html" id="logo">
+          <img src="assets/images/Domino Fazilpur png logo.png" alt="Domino Fazilpur" />
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#hot-deals">Hot Deals</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="index.html#testimonials">Testimonials</a></li>
+
+            <li><a href="cart.html" class="active"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+            <li><a href="index.html#order" class="btn">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="cart-main">
+      <div class="container">
+        <div class="cart-layout">
+          <!-- Cart Items Section -->
+          <div class="cart-items-section">
+            <h2 class="cart-title"><i class="fa-solid fa-cart-shopping"></i> Your Cart</h2>
+
+            <div id="cartItemsContainer" class="cart-items-container">
+              <!-- Cart items will be rendered here -->
+            </div>
+
+            <button id="addMoreItemsBtn" class="add-more-items-btn" onclick="window.location.href='menu.html'">
+              <i class="fa-solid fa-plus"></i> Add more items
+            </button>
+
+            <!-- Popular Section -->
+            <div class="popular-section">
+              <h4><i class="fa-solid fa-fire"></i> Popular with your order</h4>
+              <div id="popularItemsContainer" class="popular-items-container">
+                <!-- Popular items rendered here -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Summary Section -->
+          <div class="order-summary-section">
+            <div class="order-summary-card">
+              <div class="summary-row">
+                <span>Total</span>
+                <span id="summaryTotal">Rs. 0</span>
+              </div>
+              <div class="summary-row">
+                <span>Tax (15%)</span>
+                <span id="summaryTax">Rs. 0</span>
+              </div>
+              <div class="summary-row total-row">
+                <span>Grand Total</span>
+                <span id="summaryGrandTotal">Rs. 0</span>
+              </div>
+
+              <button id="checkoutBtn" class="checkout-btn" onclick="window.location.href='checkout.html'">
+                Checkout <i class="fa-solid fa-arrow-right"></i>
+              </button>
+
+              <p class="delivery-info">
+                Your order will be ready for delivery in 15 minutes on <strong id="deliveryDate"></strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="assets/js/menu-data.js"></script>
+    <script src="assets/js/cart.js"></script>
+  </body>
+</html>

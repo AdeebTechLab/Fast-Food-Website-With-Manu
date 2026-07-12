@@ -175,8 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
     itemDialog.close();
   });
 
-    updateItemPreview();
-  });
+  updateItemPreview();
 
   if (itemImageFile) {
     itemImageFile.addEventListener("change", async function () {

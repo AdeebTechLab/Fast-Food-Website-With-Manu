@@ -469,13 +469,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
   createBackToTopButton();
   // --- CART & MODAL LOGIC ---
-  const cart = [];
+  const CART_KEY = 'fastFoodCart';
+
+  function loadCartFromStorage() {
+    const saved = localStorage.getItem(CART_KEY);
+    if (!saved) return [];
+    try { return JSON.parse(saved); } catch (e) { return []; }
+  }
+
+  function saveCartToStorage(cartData) {
+    localStorage.setItem(CART_KEY, JSON.stringify(cartData));
+  }
+
+  const cart = loadCartFromStorage();
+
   const floatingCart = document.getElementById("floatingCart");
   const cartSidebar = document.getElementById("cartSidebar");
   const closeCart = document.getElementById("closeCart");
   const cartItemsList = document.getElementById("cartItemsList");
   const cartTotalValue = document.getElementById("cartTotalValue");
   const cartBadge = document.getElementById("cartBadge");
+
+  // Initialize badge with saved cart count
+  if (cartBadge) cartBadge.textContent = cart.length;
+
   const checkoutBtn = document.getElementById("checkoutBtn");
   const cartSubtotal = document.getElementById("cartSubtotal");
   const cartTax = document.getElementById("cartTax");
@@ -618,12 +635,17 @@ document.addEventListener("DOMContentLoaded", function () {
       totalPrice: total
     });
 
+    saveCartToStorage(cart);
     productModal.classList.remove('active');
     updateCartUI();
   });
 
   // Cart UI
-  floatingCart.addEventListener('click', () => cartSidebar.classList.add('active'));
+  floatingCart.addEventListener('click', () => {
+    updateCartUI();
+    cartBadge.textContent = cart.length;
+    cartSidebar.classList.add('active');
+  });
   closeCart.addEventListener('click', () => cartSidebar.classList.remove('active'));
 
   function updateCartUI() {
@@ -659,6 +681,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let tax = subtotal * 0.15;
     let grandTotal = subtotal + tax;
 
+    if (cartTotalValue) cartTotalValue.textContent = "Rs. " + grandTotal.toFixed(2);
     if (cartSubtotal) cartSubtotal.textContent = "Rs. " + subtotal.toFixed(2);
     if (cartTax) cartTax.textContent = "Rs. " + tax.toFixed(2);
     if (cartGrandTotal) cartGrandTotal.textContent = "Rs. " + grandTotal.toFixed(2);
@@ -675,6 +698,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let unitPrice = cItem.totalPrice / cItem.quantity;
     cItem.quantity = newQty;
     cItem.totalPrice = unitPrice * newQty;
+    saveCartToStorage(cart);
     updateCartUI();
   };
 
@@ -719,6 +743,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.removeFromCart = function(index) {
     cart.splice(index, 1);
+    saveCartToStorage(cart);
     updateCartUI();
   };
 
@@ -728,9 +753,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const continueToWhatsApp = document.getElementById('continueToWhatsApp');
   const tableNumberGroup = document.getElementById('tableNumberGroup');
   const addressGroup = document.getElementById('addressGroup');
-  let selectedOrderType = 'Dine-In';
+  let selectedOrderType = 'Delivery';
 
-  // Open Checkout Modal on Checkout button click
+  // Open Checkout Modal
   checkoutBtn.addEventListener('click', (e) => {
     e.preventDefault();
     if (cart.length === 0) {
@@ -751,9 +776,8 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll('.order-type-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       selectedOrderType = btn.getAttribute('data-type');
-      // Show/hide table number or address based on selection
-      if (tableNumberGroup) tableNumberGroup.style.display = selectedOrderType === 'Dine-In' || selectedOrderType === 'Car Hop' ? 'flex' : 'none';
-      if (addressGroup) addressGroup.style.display = selectedOrderType === 'Delivery' ? 'flex' : 'none';
+      if (tableNumberGroup) tableNumberGroup.style.display = selectedOrderType === 'Dine-In' || selectedOrderType === 'Car Hop' ? 'block' : 'none';
+      if (addressGroup) addressGroup.style.display = selectedOrderType === 'Delivery' ? 'block' : 'none';
     });
   });
 
@@ -794,7 +818,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
     window.open(whatsappUrl, '_blank');
     checkoutModal.classList.remove('active');
-  });
 
+    // Clear cart
+    cart.length = 0;
+    saveCartToStorage(cart);
+    updateCartUI();
+  });
 
 });
