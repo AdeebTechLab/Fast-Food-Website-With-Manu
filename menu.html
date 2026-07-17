@@ -1,244 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Menu | Fast Food Restaurant</title>
-    <link rel="icon" href="assets/images/favicon.png" type="image/png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600;700;800&family=Dancing+Script:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body class="menu-page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Domino Fazilpur | Menu</title>
+    <meta name="description" content="Browse the full menu of Domino Fazilpur Fast Food Restaurant Point - pizzas, burgers, chicken, deals and more.">
+    <meta name="author" content="Domino Fazilpur">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://fastfoodrestaurant.com/menu.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fastfoodrestaurant.com/menu.html">
+    <meta property="og:title" content="Domino Fazilpur | Menu">
+    <meta property="og:description" content="Browse our full menu - pizzas, burgers, chicken, deals and more from Domino Fazilpur.">
+    <meta property="og:image" content="https://fastfoodrestaurant.com/assets/images/burger.png">
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/images/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600;700;800&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/menu-page.css">
+    <link rel="stylesheet" href="assets/css/menu-layout-fix.css?v=20260718e">
+</head>
+<body class="menu-page">
+
+    <!-- Cart overlay & sidebar -->
+    <div class="overlay" id="page-overlay"></div>
+    <div class="sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3><svg class="icon" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> Your Cart</h3>
+            <button class="close-btn" onclick="toggleCart()"><svg class="icon" style="width:20px;height:20px" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+        </div>
+        <div class="cart-body" id="cart-content"></div>
+        <div class="cart-footer" id="cart-footer-actions"></div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div class="product-detail-overlay" id="product-detail-overlay">
+        <div class="product-detail-modal">
+            <div class="pd-image-side">
+                <img class="pd-image" id="pd-image" src="" alt="">
+                <div class="pd-name-banner"><h3 id="pd-name"></h3></div>
+            </div>
+            <div class="pd-content-side">
+                <div class="pd-header">
+                    <div class="pd-price" id="pd-price"></div>
+                    <div class="pd-header-actions">
+                        <button class="pd-icon-btn" onclick="closeProductDetail()"><svg class="icon" style="width:18px;height:18px;stroke:white" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+                    </div>
+                </div>
+                <p class="pd-description" id="pd-description"></p>
+                <div id="pd-variant-picker"></div>
+                <div class="pd-footer">
+                    <div class="qty-stepper pd-qty-stepper" id="pd-qty-stepper-wrap">
+                        <button class="qty-btn qty-remove" onclick="updatePdQty(-1)">&minus;</button>
+                        <span class="qty-count" id="pd-qty">1</span>
+                        <button class="qty-btn qty-add" onclick="updatePdQty(1)">+</button>
+                    </div>
+                    <button class="pd-add-btn" id="pd-add-to-cart">
+                        <span id="pd-add-price"></span>
+                        <span id="pd-add-divider">|</span>
+                        <span id="pd-add-label">Add to Cart</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Details Modal -->
+    <div class="checkout-details-overlay" id="checkout-details-overlay">
+        <div class="checkout-details-modal">
+            <div class="checkout-details-header">
+                <h3>Delivery Details</h3>
+                <button class="close-btn" onclick="closeCheckoutDetails()"><svg class="icon" style="width:20px;height:20px" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+            </div>
+            <div class="checkout-details-body">
+                <span class="cd-label" style="margin-top:0">Order Type</span>
+                <div class="order-type-options">
+                    <button class="order-type-btn active" data-order-type="Delivery" onclick="selectOrderType('Delivery')">Delivery</button>
+                    <button class="order-type-btn" data-order-type="Pick-Up" onclick="selectOrderType('Pick-Up')">Pick-Up</button>
+                    <button class="order-type-btn" data-order-type="Car hop" onclick="selectOrderType('Car hop')">Car Hop</button>
+                    <button class="order-type-btn" data-order-type="Dine-In" onclick="selectOrderType('Dine-In')">Dine-In</button>
+                </div>
+                <label class="cd-label">Full Name</label>
+                <input class="cd-input" type="text" id="cd-name" placeholder="e.g. Ali Khan">
+                <label class="cd-label">Phone Number</label>
+                <input class="cd-input" type="tel" id="cd-phone" placeholder="e.g. 0300 1234567">
+                <div id="cd-address-group">
+                    <label class="cd-label">Delivery Address</label>
+                    <textarea class="cd-input cd-textarea" id="cd-address" placeholder="House #, street, area, nearest landmark"></textarea>
+                    <button class="cd-location-btn" onclick="useCurrentLocation()"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg> Use current location</button>
+                    <span class="cd-location-status" id="cd-location-status"></span>
+                </div>
+                <div id="cd-carhop-group" style="display:none">
+                    <label class="cd-label">Vehicle Details</label>
+                    <input class="cd-input" type="text" id="cd-vehicle" placeholder="e.g. Toyota Corolla, White">
+                    <label class="cd-label">Number Plate</label>
+                    <input class="cd-input" type="text" id="cd-plate" placeholder="e.g. ABC-1234">
+                </div>
+                <div id="cd-table-group" style="display:none">
+                    <label class="cd-label">Table Number</label>
+                    <input class="cd-input" type="text" id="cd-table" placeholder="e.g. 12">
+                </div>
+                <div class="cd-error" id="cd-error" style="display:none"></div>
+            </div>
+            <div class="checkout-details-footer">
+                <button class="checkout-btn" onclick="confirmCheckoutDetails()">Confirm Order</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <!-- Site header (same as index.html / cart.html) -->
     <header>
-      <div class="container">
-        <a href="index.html#home" id="logo">
-          <img src="assets/images/Domino Fazilpur png logo.png" alt="Domino Fazilpur" />
-        </a>
-
-        <button class="nav-toggle" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <nav>
-          <ul>
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="index.html#hot-deals">Hot Deals</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="menu.html" class="active">Menu</a></li>
-            <li><a href="index.html#testimonials">Testimonials</a></li>
-            <li><a href="index.html#order" class="btn">Contact Us</a></li>
-          </ul>
-        </nav>
-      </div>
+        <div class="container">
+            <a href="index.html" id="logo">
+                <img src="assets/images/Domino Fazilpur png logo.png" alt="Domino Fazilpur" />
+            </a>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#hot-deals">Hot Deals</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="menu.html" class="active">Menu</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#order" class="btn">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-      <section class="menu standalone-menu" id="menu">
-        <div class="container">
-          <div class="section-title text-center">
-            <h2>Our <span class="highlight">Delicious Menu</span></h2>
-          </div>
-
-          <div class="menu-categories"></div>
+    <section class="menu-hero" aria-labelledby="menu-page-title">
+        <div class="menu-hero-overlay"></div>
+        <div class="container menu-hero-content">
+            <span class="menu-eyebrow">Freshly prepared, every day</span>
+            <h1 id="menu-page-title">Explore Our <span>Menu</span></h1>
+            <p>From sizzling favourites to refreshing drinks, find the perfect meal for every craving.</p>
+            <div class="menu-hero-points" aria-label="Service highlights">
+                <span><i class="fa-solid fa-fire-flame-curved"></i> Made Fresh</span>
+                <span><i class="fa-solid fa-clock"></i> Fast Service</span>
+                <span><i class="fa-solid fa-bag-shopping"></i> Easy Ordering</span>
+            </div>
         </div>
-      </section>
-    </main>
+    </section>
 
-    <button class="back-to-home" onclick="window.location.href='index.html#home'">
-      <i class="fas fa-arrow-left" aria-hidden="true"></i>
-      Back to Home
+    <div class="menu-controls">
+        <div class="menu-controls-heading">
+            <div>
+                <span class="menu-controls-kicker">Find your favourite</span>
+                <h2>What are you craving today?</h2>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-box">
+                <span class="search-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+                <input type="text" id="menu-search" placeholder="Search your favourite dish..." onkeyup="filterMenu()">
+                <button class="search-btn" aria-label="Search menu"><svg class="icon" style="width:16px;height:16px;stroke:white" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+            </div>
+        </div>
+        <nav class="category-nav">
+            <button type="button" class="cat-nav-arrow cat-nav-arrow-left" onclick="scrollCategoryNav(-1)" aria-label="Scroll categories left">
+                <svg class="icon" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <ul id="horizontal-categories"></ul>
+            <button type="button" class="cat-nav-arrow cat-nav-arrow-right" onclick="scrollCategoryNav(1)" aria-label="Scroll categories right">
+                <svg class="icon" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+        </nav>
+    </div>
+
+    <main class="menu-content" id="menu-grid"></main>
+
+    <button type="button" class="menu-floating-cart" id="menu-floating-cart" onclick="toggleCart()" aria-label="Open shopping cart">
+        <span class="menu-floating-cart-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M6.5 8.5h11l1 11h-13l1-11Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/><path d="M9.5 13h.01M14.5 13h.01"/></svg>
+        </span>
+        <span class="menu-floating-cart-badge" id="menu-floating-cart-badge" aria-label="0 items">0</span>
+        <span class="menu-floating-cart-label">Cart</span>
     </button>
 
-    <!-- Cart & Modal UI -->
-    <style>
-      .floating-cart { position: fixed; bottom: 30px; right: 30px; background: var(--primary); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; cursor: pointer; box-shadow: 0 5px 15px rgba(255, 60, 0, 0.4); z-index: 1000; transition: transform 0.3s ease; }
-      .floating-cart:hover { transform: scale(1.1); }
-      .cart-badge { position: absolute; top: -5px; right: -5px; background: white; color: var(--primary); font-size: 0.8rem; font-weight: 700; width: 24px; height: 24px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-      .product-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; justify-content: center; align-items: center; z-index: 2000; }
-      .product-modal-overlay.active { display: flex; }
-      .product-modal { background: var(--white); width: 90%; max-width: 500px; border-radius: 12px; padding: 20px; position: relative; max-height: 90vh; overflow-y: auto; }
-      .close-modal { position: absolute; top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer; color: var(--text-color); }
-      .modal-header { display: flex; gap: 15px; margin-bottom: 20px; }
-      .modal-header img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; }
-      .modal-title { font-size: 1.2rem; font-weight: 700; }
-      .modal-price { color: var(--primary); font-weight: 600; }
-      .modal-section { margin-bottom: 20px; }
-      .modal-section h4 { margin-bottom: 10px; font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 5px;}
-      .variant-option, .addon-option { display: flex; justify-content: space-between; margin-bottom: 8px; }
-            .cart-sidebar { position: fixed; top: 0; right: -450px; width: 100%; max-width: 450px; height: 100%; background: #ffffff; box-shadow: -5px 0 15px rgba(0,0,0,0.1); transition: right 0.3s ease; z-index: 2000; display: flex; flex-direction: column; font-family: 'Catamaran', sans-serif; pointer-events: none; }
-      .cart-sidebar.active { right: 0; pointer-events: auto; }
-      .cart-header { padding: 20px; background: #ff6b35; color: white; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
-      .cart-header h3 { margin: 0; display: flex; align-items: center; gap: 10px; font-size: 1.4rem;}
-      .close-cart { cursor: pointer; font-size: 1.5rem; color: white; }
-      .cart-items { flex: 1; overflow-y: auto; padding: 20px; }
-      .cart-footer { padding: 15px 20px; border-top: 1px solid #eee; background: #fff; flex-shrink: 0; max-height: 50%; overflow-y: auto; }
-      .cart-summary { margin-bottom: 15px; }
-      .summary-row { display: flex; justify-content: space-between; margin-bottom: 8px; color: #555; font-weight: 500; font-size: 1.2rem; }
-      .summary-row.total { border-top: 1px solid #ddd; padding-top: 10px; margin-top: 5px; font-weight: 800; color: #222; font-size: 1.3rem; }
-      .checkout-btn { width: 100%; background: #ff6b35; color: white; padding: 14px; border-radius: 8px; font-weight: 700; font-size: 1.2rem; border: none; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; }
-      .checkout-btn:hover { background: #e65a2a; }
-      .checkout-info { text-align: center; font-size: 0.85rem; color: #888; margin-top: 10px; line-height: 1.4; }
-      .checkout-info strong { color: #555; }
-      .checkout-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: none; justify-content: center; align-items: center; z-index: 3000; }
-      .checkout-modal-overlay.active { display: flex; }
-      .checkout-modal { background: #fff; width: 90%; max-width: 480px; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); max-height: 90vh; overflow-y: auto; }
-      .checkout-modal-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 24px 10px; }
-      .checkout-modal-header h3 { margin: 0; font-size: 1.6rem; font-weight: 800; }
-      .checkout-modal-close { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #999; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
-      .checkout-modal-close:hover { background: #f5f5f5; color: #333; }
-      .checkout-modal-body { padding: 10px 24px 24px; }
-      .order-type-label { font-weight: 600; color: #333; font-size: 1.2rem; }
-      .order-type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0 20px; }
-      .order-type-btn { padding: 12px; border: 1.5px solid #e0e0e0; border-radius: 8px; background: #fff; font-size: 1.3rem; font-weight: 600; color: #555; cursor: pointer; transition: all 0.2s; }
-      .order-type-btn:hover { border-color: #ff6b35; color: #ff6b35; }
-      .order-type-btn.active { background: #ff6b35; border-color: #ff6b35; color: #fff; }
-      .checkout-input-group { margin-bottom: 15px; }
-      .checkout-input-group label { display: block; font-weight: 600; color: #333; font-size: 1.2rem; margin-bottom: 6px; }
-      .checkout-input-group input { width: 100%; padding: 12px 14px; border: 1.5px solid #e0e0e0; border-radius: 8px; font-size: 1.3rem; font-family: inherit; color: #333; box-sizing: border-box; }
-      .checkout-input-group input::placeholder { color: #aaa; }
-      .checkout-input-group input:focus { outline: none; border-color: #ff6b35; box-shadow: 0 0 0 3px rgba(255,107,53,0.15); }
-      .checkout-whatsapp-btn { width: 100%; background: #ff6b35; color: #fff; padding: 14px; border: none; border-radius: 8px; font-size: 1.4rem; font-weight: 700; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; transition: all 0.3s; font-family: inherit; }
-      .checkout-whatsapp-btn:hover { background: #e65a2a; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(255,107,53,0.35); }
-      .cart-item-card { background: white; border: 1px solid #eaeaea; border-radius: 12px; padding: 15px; margin-bottom: 15px; display: flex; align-items: flex-start; gap: 15px; }
-      .cart-item-img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; }
-      .cart-item-info { flex: 1; }
-      .cart-item-title { font-weight: 800; font-size: 1.1rem; text-transform: uppercase; line-height: 1.2; margin-bottom: 5px; color: #333;}
-      .cart-item-price { font-weight: 700; color: #666; margin-top: 10px; }
-      .cart-qty-ctrl { display: flex; align-items: center; gap: 15px; border: 1px solid #ff6b35; border-radius: 20px; padding: 2px 15px; color: #333; font-weight: bold; width: fit-content; margin-top: 10px;}
-      .cart-qty-ctrl button { background: none; border: none; color: #ff6b35; font-size: 1.2rem; cursor: pointer; font-weight: bold; padding: 0;}
-      .add-more-btn { width: 100%; border: 1px dashed #ff6b35; color: #ff6b35; background: transparent; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; margin-bottom: 20px; font-size: 1rem;}
-      .popular-section { margin-top: 20px; }
-      .popular-section h4 { display: flex; align-items: center; gap: 5px; margin-bottom: 15px; font-size: 1.1rem; color:#222; }
-      .popular-list { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; }
-      .popular-card { min-width: 140px; position: relative; }
-      .popular-card img { width: 100%; height: 120px; object-fit: cover; border-radius: 8px; }
-      .popular-card-title { font-weight: 600; font-size: 0.9rem; margin-top: 5px; line-height: 1.2; color: #555; text-transform: uppercase;}
-      .popular-card-price { font-weight: 800; color: #222; margin-top: 5px;}
-      .popular-add-btn { position: absolute; right: 5px; top: 90px; background: #ff6b35; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; border: none; font-size: 1.2rem; line-height: 1;}
-      .cart-summary { background: #f8f9fa; padding: 20px; border-radius: 12px; margin: 20px;}
-      .summary-row { display: flex; justify-content: space-between; margin-bottom: 10px; color: #555; font-weight: 500;}
-      .summary-row.total { border-top: 1px solid #ddd; padding-top: 15px; margin-top: 5px; font-weight: 800; color: #222; font-size: 1.2rem;}
-      .checkout-section { padding: 0 20px 20px; }
-      .checkout-btn { width: 100%; background: #ff6b35; color: white; padding: 15px; border-radius: 8px; font-weight: 700; font-size: 1.2rem; border: none; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 10px;}
-      .checkout-info { text-align: center; font-size: 0.9rem; color: #777; margin-top: 15px; line-height: 1.4;}
-      .checkout-info strong { color: #555; }
-    </style>
-
-    <div class="floating-cart" id="floatingCart">
-      <i class="fa-solid fa-cart-shopping"></i>
-      <div class="cart-badge" id="cartBadge">0</div>
-    </div>
-
-    <div class="product-modal-overlay" id="productModal">
-      <div class="product-modal">
-        <div class="close-modal" id="closeModal">&times;</div>
-        <div class="modal-header">
-          <img id="modalImg" src="" alt="Product">
-          <div>
-            <div class="modal-title" id="modalTitle">Product Name</div>
-            <div class="modal-price" id="modalBasePrice">Rs. 0</div>
-          </div>
-        </div>
-        <div id="variantsContainer" class="modal-section" style="display:none;">
-          <h4>Select Size</h4>
-          <div id="variantsOptions"></div>
-        </div>
-        <div id="addonsContainer" class="modal-section" style="display:none;">
-          <h4>Add-ons</h4>
-          <div id="addonsOptions"></div>
-        </div>
-        <div class="modal-section" style="display:flex; align-items:center; gap:15px;">
-          <h4 style="margin-bottom:0; border:none; padding:0;">Quantity:</h4>
-          <div style="display:flex; align-items:center; gap:10px; background:#f5f5f5; border-radius:8px; padding:5px;">
-            <button type="button" id="qtyMinus" style="border:none; background:white; width:30px; height:30px; border-radius:5px; cursor:pointer; font-weight:bold;">-</button>
-            <span id="modalQty" style="font-weight:bold; min-width:20px; text-align:center;">1</span>
-            <button type="button" id="qtyPlus" style="border:none; background:white; width:30px; height:30px; border-radius:5px; cursor:pointer; font-weight:bold;">+</button>
-          </div>
-        </div>
-        <button class="btn" id="confirmAddToCartBtn" style="width:100%;">Add to Cart - <span id="modalTotalPrice"></span></button>
-      </div>
-    </div>
-
-    <div class="cart-sidebar" id="cartSidebar">
-      <div class="cart-header">
-        <h3>Your Cart</h3>
-        <div class="close-cart" id="closeCart">&times;</div>
-      </div>
-      <div class="cart-items" id="cartItemsList">
-        <p>Your cart is empty.</p>
-      </div>
-      <div class="cart-footer">
-        <div class="cart-summary">
-          <div class="summary-row">
-            <span>Total</span>
-            <span id="cartSubtotal">Rs. 0</span>
-          </div>
-          <div class="summary-row">
-            <span>Tax (15%)</span>
-            <span id="cartTax">Rs. 0</span>
-          </div>
-          <div class="summary-row total">
-            <span>Grand Total</span>
-            <span id="cartGrandTotal">Rs. 0</span>
-          </div>
-        </div>
-        <button class="btn checkout-btn" id="checkoutBtn" style="width:100%;">Checkout <i class="fa-solid fa-arrow-right"></i></button>
-        <p class="checkout-info">Your order will be delivered in 45 minutes on <strong id="checkoutTime"></strong></p>
-      </div>
-    </div>
-
-    <!-- Checkout Modal -->
-    <div class="checkout-modal-overlay" id="checkoutModal">
-      <div class="checkout-modal">
-        <div class="checkout-modal-header">
-          <h3>Almost there! <i class="fa-solid fa-party-horn" style="color:#ff6b35;"></i></h3>
-          <button class="checkout-modal-close" id="closeCheckoutModal">&times;</button>
-        </div>
-        <div class="checkout-modal-body">
-          <div>
-            <span class="order-type-label">Order Type</span>
-            <div class="order-type-grid">
-              <button class="order-type-btn active" data-type="Delivery">Delivery</button>
-              <button class="order-type-btn" data-type="Pick-Up">Pick-Up</button>
-              <button class="order-type-btn" data-type="Car Hop">Car Hop</button>
-              <button class="order-type-btn" data-type="Dine-In">Dine-In</button>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <img class="footer-logo" src="assets/images/Domino Fazilpur png logo.png" alt="Domino Fazilpur" />
+                    <p>
+                        We are dedicated to serving the most delicious fast food with
+                        premium quality ingredients and excellent customer service.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                        <li><a href="index.html#order">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-hours">
+                    <h4>Opening Hours</h4>
+                    <p><span>Monday - Sunday:</span> <span>9:00 AM - 2:00 AM</span></p>
+                    <p><span>Delivery Hours:</span> <span>9:00 AM - 1:30 AM</span></p>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>WhatsApp Channel</h4>
+                    <p>
+                        Follow the Domino Fazilpur channel on WhatsApp for latest deals,
+                        menu updates, and announcements.
+                    </p>
+                    <a class="whatsapp-channel-link" href="https://whatsapp.com/channel/0029Vb8ErMY2ER6dW4PK9A2c" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i>
+                        Follow WhatsApp Channel
+                    </a>
+                </div>
             </div>
-          </div>
-          <div class="checkout-input-group">
-            <label for="checkoutName">Full Name</label>
-            <input type="text" id="checkoutName" placeholder="e.g. Ali Khan" />
-          </div>
-          <div class="checkout-input-group">
-            <label for="checkoutPhone">Phone Number</label>
-            <input type="tel" id="checkoutPhone" placeholder="e.g. 0300 1234567" />
-          </div>
-          <div class="checkout-input-group" id="addressGroup">
-            <label for="checkoutAddress">Delivery Address</label>
-            <input type="text" id="checkoutAddress" placeholder="House #, street, area, nearest landmark" />
-          </div>
-          <div class="checkout-input-group" id="tableNumberGroup" style="display:none;">
-            <label for="checkoutTable">Table Number</label>
-            <input type="text" id="checkoutTable" placeholder="e.g. 12" />
-          </div>
-          <button class="checkout-whatsapp-btn" id="continueToWhatsApp">
-            Continue to WhatsApp <i class="fa-solid fa-arrow-right"></i>
-          </button>
         </div>
-      </div>
-    </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>
+                    &copy; 2026 Domino Fazilpur. All Rights Reserved. Developed by
+                    <a href="https://www.google.com/search?q=adeeb+technology+lab" target="_blank" rel="noopener noreferrer">Adeeb Technology Lab</a>
+                </p>
+            </div>
+        </div>
+    </footer>
 
-    <script src="assets/js/menu-data.js"></script>
-    <script src="assets/js/script.js"></script>
-  </body>
+    <script src="app.js?v=20260718g"></script>
+</body>
 </html>

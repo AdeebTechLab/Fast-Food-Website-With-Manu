@@ -1,0 +1,126 @@
+<!-- Overlay -->
+<div class="overlay" id="page-overlay"></div>
+
+<!-- Cart Sidebar -->
+<div class="sidebar" id="cart-sidebar">
+    <div class="cart-header">
+        <h3><svg class="icon" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> Your Cart</h3>
+        <button class="close-btn" onclick="toggleCart()"><svg class="icon" style="width:20px;height:20px" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    </div>
+    <div class="cart-body" id="cart-content"></div>
+    <div class="cart-footer" id="cart-footer-actions"></div>
+</div>
+
+<!-- Product Detail Modal -->
+<div class="product-detail-overlay" id="product-detail-overlay">
+    <div class="product-detail-modal">
+        <div class="pd-image-side">
+            <img class="pd-image" id="pd-image" src="" alt="">
+            <div class="pd-name-banner"><h3 id="pd-name"></h3></div>
+        </div>
+        <div class="pd-content-side">
+            <div class="pd-header">
+                <div class="pd-price" id="pd-price"></div>
+                <div class="pd-header-actions">
+                    <button class="pd-icon-btn" onclick="closeProductDetail()"><svg class="icon" style="width:18px;height:18px;stroke:white" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+                </div>
+            </div>
+            <p class="pd-description" id="pd-description"></p>
+            <div id="pd-variant-picker"></div>
+            <div class="pd-footer">
+                <div class="qty-stepper pd-qty-stepper" id="pd-qty-stepper-wrap">
+                    <button class="qty-btn qty-remove" onclick="updatePdQty(-1)">&minus;</button>
+                    <span class="qty-count" id="pd-qty">1</span>
+                    <button class="qty-btn qty-add" onclick="updatePdQty(1)">+</button>
+                </div>
+                <button class="pd-add-btn" id="pd-add-to-cart">
+                    <span id="pd-add-price"></span>
+                    <span id="pd-add-divider">|</span>
+                    <span id="pd-add-label">Add to Cart</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Checkout Details Modal -->
+<div class="checkout-details-overlay" id="checkout-details-overlay">
+    <div class="checkout-details-modal">
+        <div class="checkout-details-header">
+            <h3>Delivery Details</h3>
+            <button class="close-btn" onclick="closeCheckoutDetails()"><svg class="icon" style="width:20px;height:20px" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+        </div>
+        <div class="checkout-details-body">
+            <span class="cd-label" style="margin-top:0">Order Type</span>
+            <div class="order-type-options">
+                <button class="order-type-btn active" data-order-type="Delivery" onclick="selectOrderType('Delivery')">Delivery</button>
+                <button class="order-type-btn" data-order-type="Pick-Up" onclick="selectOrderType('Pick-Up')">Pick-Up</button>
+                <button class="order-type-btn" data-order-type="Car hop" onclick="selectOrderType('Car hop')">Car Hop</button>
+                <button class="order-type-btn" data-order-type="Dine-In" onclick="selectOrderType('Dine-In')">Dine-In</button>
+            </div>
+
+            <label class="cd-label">Full Name</label>
+            <input class="cd-input" type="text" id="cd-name" placeholder="e.g. Ali Khan">
+
+            <label class="cd-label">Phone Number</label>
+            <input class="cd-input" type="tel" id="cd-phone" placeholder="e.g. 0300 1234567">
+
+            <div id="cd-address-group">
+                <label class="cd-label">Delivery Address</label>
+                <textarea class="cd-input cd-textarea" id="cd-address" placeholder="House #, street, area, nearest landmark"></textarea>
+                <button class="cd-location-btn" onclick="useCurrentLocation()"><svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg> Use current location</button>
+                <span class="cd-location-status" id="cd-location-status"></span>
+            </div>
+
+            <div id="cd-carhop-group" style="display:none">
+                <label class="cd-label">Vehicle Details</label>
+                <input class="cd-input" type="text" id="cd-vehicle" placeholder="e.g. Toyota Corolla, White">
+                <label class="cd-label">Number Plate</label>
+                <input class="cd-input" type="text" id="cd-plate" placeholder="e.g. ABC-1234">
+            </div>
+
+            <div id="cd-table-group" style="display:none">
+                <label class="cd-label">Table Number</label>
+                <input class="cd-input" type="text" id="cd-table" placeholder="e.g. 12">
+            </div>
+
+            <div class="cd-error" id="cd-error" style="display:none"></div>
+        </div>
+        <div class="checkout-details-footer">
+            <button class="checkout-btn" onclick="confirmCheckoutDetails()">Confirm Order</button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Main Header (matches index.html / cart.html) -->
+<header>
+    <div class="container">
+        <a href="index.html" id="logo">
+            <img src="assets/images/Domino Fazilpur png logo.png" alt="Domino Fazilpur" />
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#hot-deals">Hot Deals</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li>
+                    <a href="#" onclick="toggleCart(); return false;">
+                        <i class="fa-solid fa-cart-shopping"></i> Cart
+                        <span id="cart-badge" style="display:none">0</span>
+                    </a>
+                </li>
+                <li><a href="index.html#order" class="btn">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

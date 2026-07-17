@@ -35,7 +35,7 @@
   // --- Auth gate ---
   async function checkSession() {
     try {
-      const res = await fetch('/api/session');
+      const res = await fetch('/api/session', { credentials: 'same-origin', cache: 'no-store' });
       const data = await res.json();
       if (!data.authenticated) {
         window.location.href = '/admin/login.html';
@@ -53,7 +53,7 @@
   // --- Load menu data ---
   async function loadMenu() {
     try {
-      const res = await fetch('/api/menu', { cache: 'no-store' });
+      const res = await fetch('/api/menu', { cache: 'no-store', credentials: 'same-origin' });
       if (!res.ok) throw new Error('Failed to load menu (status ' + res.status + ')');
       menuData = await res.json();
       computeNextId();
@@ -118,19 +118,38 @@
     const idInput = node.querySelector('.cat-id-input');
     const itemsGrid = node.querySelector('.items-grid');
     const addItemBtn = node.querySelector('.add-item-btn');
+    const moveUpBtn = node.querySelector('.move-category-up');
+    const moveDownBtn = node.querySelector('.move-category-down');
     const deleteCategoryBtn = node.querySelector('.delete-category-btn');
 
     titleInput.value = category.title || '';
     idInput.value = category.categoryId || '';
+    moveUpBtn.disabled = catIndex === 0;
+    moveDownBtn.disabled = catIndex === menuData.length - 1;
 
-    titleInput.addEventListener('input', () => { category.title = titleInput.value; });
-    idInput.addEventListener('input', () => { category.categoryId = idInput.value.trim(); });
+    titleInput.addEventListener('input', () => {
+      category.title = titleInput.value;
+      const baseId = titleInput.value
+        .trim()
+        .toLowerCase()
+        .replace(/&/g, ' and ')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '') || 'category';
+      let generatedId = baseId;
+      let suffix = 2;
+      while (menuData.some((entry) => entry !== category && entry.categoryId === generatedId)) {
+        generatedId = `${baseId}-${suffix++}`;
+      }
+      category.categoryId = generatedId;
+      idInput.value = generatedId;
+    });
 
     (category.items || []).forEach((item) => {
       itemsGrid.appendChild(renderItem(item, category));
     });
 
     addItemBtn.addEventListener('click', () => {
+      if (!Array.isArray(category.items)) category.items = [];
       const newItem = {
         id: nextId++,
         name: '',
@@ -141,14 +160,33 @@
         variants: [],
       };
       category.items.push(newItem);
-      itemsGrid.appendChild(renderItem(newItem, category));
+      const newItemNode = renderItem(newItem, category);
+      itemsGrid.appendChild(newItemNode);
+      const nameField = newItemNode.querySelector('.item-name-input');
+      if (nameField) nameField.focus();
+      showBanner('New item added. Complete its details, then click Save Changes.', 'success');
     });
+
+    function moveCategory(direction) {
+      const currentIndex = menuData.indexOf(category);
+      const nextIndex = currentIndex + direction;
+      if (currentIndex < 0 || nextIndex < 0 || nextIndex >= menuData.length) return;
+      menuData.splice(currentIndex, 1);
+      menuData.splice(nextIndex, 0, category);
+      renderAll();
+      const movedNode = container.children[nextIndex];
+      if (movedNode) movedNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      showBanner('Category order changed. Click Save Changes to publish this order on the menu.', 'success');
+    }
+
+    moveUpBtn.addEventListener('click', () => moveCategory(-1));
+    moveDownBtn.addEventListener('click', () => moveCategory(1));
 
     deleteCategoryBtn.addEventListener('click', () => {
       if (!confirm(`Delete category "${category.title || category.categoryId}" and all its items?`)) return;
       const idx = menuData.indexOf(category);
       if (idx !== -1) menuData.splice(idx, 1);
-      node.remove();
+      renderAll();
     });
 
     return node;
@@ -161,6 +199,9 @@
     const nameInput = node.querySelector('.item-name-input');
     const descInput = node.querySelector('.item-desc-input');
     const hasVariantsInput = node.querySelector('.item-hasvariants-input');
+    const optionsToggleBtn = node.querySelector('.options-toggle-btn');
+    const optionsToggleIcon = node.querySelector('.options-toggle-icon');
+    const optionsToggleText = node.querySelector('.options-toggle-text');
     const priceRow = node.querySelector('.item-price-row');
     const priceInput = node.querySelector('.item-price-input');
     const badgeInput = node.querySelector('.item-badge-input');
@@ -169,8 +210,6 @@
     const addVariantBtn = node.querySelector('.add-variant-btn');
     const presetBtns = node.querySelectorAll('.preset-btn');
     const variantsBadgeInput = node.querySelector('.item-badge-input-variants');
-    const priceFromLabel = node.querySelector('.pricefrom-label');
-    const priceFromInput = node.querySelector('.item-pricefrom-input');
     const discountToggleLabel = node.querySelector('.discount-toggle-label');
     const discountInput = node.querySelector('.item-discount-input');
     const discountRow = node.querySelector('.item-discount-row');
@@ -185,7 +224,6 @@
     priceInput.value = item.price != null ? item.price : '';
     badgeInput.value = item.badge || '';
     variantsBadgeInput.value = item.badge || '';
-    priceFromInput.checked = !!item.priceFrom;
     bestDealInput.checked = !!item.bestDeal;
     discountInput.checked = item.oldPrice != null;
     oldPriceInput.value = item.oldPrice != null ? item.oldPrice : '';
@@ -193,16 +231,20 @@
 
     const itemHasVariants = Array.isArray(item.variants) && item.variants.length > 0;
     hasVariantsInput.checked = itemHasVariants;
+    let optionsPanelOpen = itemHasVariants;
     if (!itemHasVariants && !Array.isArray(item.variants)) item.variants = [];
 
     // --- Toggle between a single price field and the variants list ---
     function syncVariantsVisibility() {
       const on = hasVariantsInput.checked;
       priceRow.classList.toggle('hidden', on);
-      priceFromLabel.classList.toggle('hidden', on);
       discountToggleLabel.classList.toggle('hidden', on);
       discountRow.classList.toggle('hidden', on || !discountInput.checked);
-      variantsSection.classList.toggle('hidden', !on);
+      variantsSection.classList.toggle('hidden', !on || !optionsPanelOpen);
+      optionsToggleBtn.classList.toggle('active', on && optionsPanelOpen);
+      optionsToggleBtn.setAttribute('aria-expanded', String(on && optionsPanelOpen));
+      optionsToggleIcon.textContent = on && optionsPanelOpen ? '−' : '+';
+      optionsToggleText.textContent = !on ? 'Add Options' : (optionsPanelOpen ? 'Hide Options' : 'Show Options');
     }
     syncVariantsVisibility();
 
@@ -229,6 +271,13 @@
         const idx = item.variants.indexOf(variant);
         if (idx !== -1) item.variants.splice(idx, 1);
         row.remove();
+        if (item.variants.length === 0) {
+          item.price = Number(variant.price) || 0;
+          priceInput.value = item.price;
+          hasVariantsInput.checked = false;
+          optionsPanelOpen = false;
+          syncVariantsVisibility();
+        }
       });
 
       return row;
@@ -260,8 +309,20 @@
       });
     });
 
+    optionsToggleBtn.addEventListener('click', () => {
+      if (!hasVariantsInput.checked) {
+        hasVariantsInput.checked = true;
+        optionsPanelOpen = true;
+        hasVariantsInput.dispatchEvent(new Event('change', { bubbles: true }));
+        return;
+      }
+      optionsPanelOpen = !optionsPanelOpen;
+      syncVariantsVisibility();
+    });
+
     hasVariantsInput.addEventListener('change', () => {
       if (hasVariantsInput.checked) {
+        optionsPanelOpen = true;
         if (item.variants.length === 0) {
           item.variants.push({ label: 'Half', price: item.price || 0 });
           item.variants.push({ label: 'Full', price: item.price || 0 });
@@ -271,6 +332,7 @@
         delete item.oldPrice;
         discountInput.checked = false;
       } else {
+        optionsPanelOpen = false;
         item.price = item.variants[0] ? item.variants[0].price : 0;
         item.variants = [];
         priceInput.value = item.price;
@@ -291,10 +353,6 @@
     variantsBadgeInput.addEventListener('input', () => {
       item.badge = variantsBadgeInput.value.trim() || null;
       badgeInput.value = variantsBadgeInput.value;
-    });
-    priceFromInput.addEventListener('change', () => {
-      if (priceFromInput.checked) item.priceFrom = true;
-      else delete item.priceFrom;
     });
     discountInput.addEventListener('change', () => {
       discountRow.classList.toggle('hidden', !discountInput.checked);
@@ -412,6 +470,8 @@
     try {
       const res = await fetch('/api/menu', {
         method: 'PUT',
+        credentials: 'same-origin',
+        cache: 'no-store',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(menuData),
       });
@@ -480,7 +540,7 @@
 
   // --- Logout ---
   document.getElementById('logout-btn').addEventListener('click', async () => {
-    await fetch('/api/logout', { method: 'POST' });
+    await fetch('/api/logout', { method: 'POST', credentials: 'same-origin' });
     window.location.href = '/admin/login.html';
   });
 

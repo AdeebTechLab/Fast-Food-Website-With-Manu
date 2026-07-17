@@ -1,0 +1,15 @@
+/* ============================================================
+   THEME OVERRIDE: Green -> Orange
+   Load this file AFTER style.css. It only redefines colors,
+   so it's easy to remove or tweak without touching style.css.
+   ============================================================ */
+
+:root {
+    --brand-green: #ff6b35; /* was #e11d2e (red) - change this one line to pick a different color */
+}
+
+/* style.css has two light-tint backgrounds that are hardcoded
+   hex values (not the --brand-green variable), so they need their
+   own overrides here to match the new orange theme. */
+.upsell-nav-btn { background: #ffe8da; }
+.category-nav a.active-category { background: #ffe8da; }

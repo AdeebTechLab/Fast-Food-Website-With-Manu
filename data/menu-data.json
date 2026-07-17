@@ -1,0 +1,1844 @@
+[
+  {
+    "categoryId": "appetizer",
+    "title": "Appetizer",
+    "items": [
+      {
+        "id": 1,
+        "name": "CHICKEN WINGS CHILLI DRY (12 Pieces)",
+        "image": "cat-appetizer.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 500
+          },
+          {
+            "label": "Full",
+            "price": 1000
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "BELL \"N\" TELL SPECIAL HONEY CHICKEN WINGS (12 Pieces)",
+        "image": "cat-appetizer.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 500
+          },
+          {
+            "label": "Full",
+            "price": 1000
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "FISH CRACKER",
+        "image": "cat-appetizer.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 300
+          },
+          {
+            "label": "Full",
+            "price": 600
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "FRENCH FRIES",
+        "price": 300,
+        "image": "cat-appetizer.webp"
+      }
+    ]
+  },
+  {
+    "categoryId": "chinese-soups",
+    "title": "Chinese Soups",
+    "items": [
+      {
+        "id": 8,
+        "name": "BELL \"N\" TELL SPECIAL SOUP",
+        "image": "cat-chinese-soups.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 750
+          },
+          {
+            "label": "Full",
+            "price": 1400
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "name": "BELL \"N\" TELL SPECIAL FOUR TIGER SOUP",
+        "image": "cat-chinese-soups.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 800
+          },
+          {
+            "label": "Full",
+            "price": 1550
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "name": "HOT & SOUR SOUP",
+        "image": "cat-chinese-soups.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 600
+          },
+          {
+            "label": "Full",
+            "price": 1180
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "name": "CHICKEN CORN SOUP",
+        "image": "cat-chinese-soups.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 600
+          },
+          {
+            "label": "Full",
+            "price": 1180
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "name": "CHICKEN THAI SOUP",
+        "image": "cat-chinese-soups.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 600
+          },
+          {
+            "label": "Full",
+            "price": 1180
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "name": "CHICKEN VEGETABLE SOUP",
+        "image": "cat-chinese-soups.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 600
+          },
+          {
+            "label": "Full",
+            "price": 1180
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": "fish",
+    "title": "Fish",
+    "items": [
+      {
+        "id": 20,
+        "name": "FINGER FISH (10 Pieces with Fries)",
+        "image": "cat-fish.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 1050
+          },
+          {
+            "label": "Full",
+            "price": 2100
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "name": "DHAKA FISH (8 Pieces with Fries)",
+        "image": "cat-fish.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 1050
+          },
+          {
+            "label": "Full",
+            "price": 2100
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "name": "FISH WITH GREEN CHILLI DRY",
+        "image": "cat-fish.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 900
+          },
+          {
+            "label": "Full",
+            "price": 1700
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "name": "DAMRA FISH (FRIED) (Per KG)",
+        "price": 0,
+        "image": "cat-fish.webp",
+        "description": "Price on inquiry - sold per KG"
+      },
+      {
+        "id": 27,
+        "name": "DAMRA FISH (GRILLED) (Per KG)",
+        "price": 0,
+        "image": "cat-fish.webp",
+        "description": "Price on inquiry - sold per KG"
+      }
+    ]
+  },
+  {
+    "categoryId": "chicken",
+    "title": "Chicken",
+    "items": [
+      {
+        "id": 28,
+        "name": "BELL \"N\" TELL SPECIAL CHERRY CHICKEN",
+        "image": "cat-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 950
+          },
+          {
+            "label": "Full",
+            "price": 1780
+          }
+        ]
+      },
+      {
+        "id": 30,
+        "name": "BELL \"N\" TELL SPECIAL CRISPY CHICKEN",
+        "image": "cat-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 950
+          },
+          {
+            "label": "Full",
+            "price": 1780
+          }
+        ]
+      },
+      {
+        "id": 32,
+        "name": "CHICKEN DRUM STICKS (Per Piece)",
+        "price": 290,
+        "image": "cat-chicken.webp"
+      },
+      {
+        "id": 33,
+        "name": "CHICKEN NUGGETS",
+        "image": "cat-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 700
+          },
+          {
+            "label": "Full",
+            "price": 1400
+          }
+        ]
+      },
+      {
+        "id": 35,
+        "name": "MONGOLIAN CHILLI DRY",
+        "image": "cat-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 950
+          },
+          {
+            "label": "Full",
+            "price": 1780
+          }
+        ]
+      },
+      {
+        "id": 37,
+        "name": "CHICKEN CHILLI DRY",
+        "image": "cat-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 850
+          },
+          {
+            "label": "Full",
+            "price": 1600
+          }
+        ]
+      },
+      {
+        "id": 39,
+        "name": "DHAKA CHICKEN",
+        "image": "cat-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 950
+          },
+          {
+            "label": "Full",
+            "price": 1680
+          }
+        ]
+      },
+      {
+        "id": 41,
+        "name": "ALMONDS CHICKEN CHILLI DRY",
+        "image": "cat-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 950
+          },
+          {
+            "label": "Full",
+            "price": 1780
+          }
+        ]
+      },
+      {
+        "id": 43,
+        "name": "MONGOLIAN CHICKEN",
+        "image": "cat-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 950
+          },
+          {
+            "label": "Full",
+            "price": 1780
+          }
+        ]
+      },
+      {
+        "id": 45,
+        "name": "CHICKEN MANCHURIAN",
+        "image": "cat-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 900
+          },
+          {
+            "label": "Full",
+            "price": 1680
+          }
+        ]
+      },
+      {
+        "id": 47,
+        "name": "CHICKEN WITH BLACK PEPPER & CHILLIS",
+        "image": "cat-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 900
+          },
+          {
+            "label": "Full",
+            "price": 1680
+          }
+        ]
+      },
+      {
+        "id": 49,
+        "name": "CHICKEN CHILLI VEGETABLE",
+        "image": "cat-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 900
+          },
+          {
+            "label": "Full",
+            "price": 1680
+          }
+        ]
+      },
+      {
+        "id": 51,
+        "name": "CHICKEN WITH PINE APPLE",
+        "image": "cat-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 900
+          },
+          {
+            "label": "Full",
+            "price": 1680
+          }
+        ]
+      },
+      {
+        "id": 53,
+        "name": "SWEET N SOUR CHICKEN",
+        "image": "cat-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 900
+          },
+          {
+            "label": "Full",
+            "price": 1680
+          }
+        ]
+      },
+      {
+        "id": 55,
+        "name": "CHICKEN WITH CHILLIS & ONION",
+        "image": "cat-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 900
+          },
+          {
+            "label": "Full",
+            "price": 1680
+          }
+        ]
+      },
+      {
+        "id": 57,
+        "name": "CHICKEN WITH GARLIC SAUCE",
+        "image": "cat-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 900
+          },
+          {
+            "label": "Full",
+            "price": 1680
+          }
+        ]
+      },
+      {
+        "id": 59,
+        "name": "CHICKEN BUTTON MUSHROOM WITH GARLIC SAUCE",
+        "image": "cat-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 950
+          },
+          {
+            "label": "Full",
+            "price": 1780
+          }
+        ]
+      },
+      {
+        "id": 61,
+        "name": "CHICKEN MUSHROOM VEGETABLE",
+        "image": "cat-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 950
+          },
+          {
+            "label": "Full",
+            "price": 1780
+          }
+        ]
+      },
+      {
+        "id": 63,
+        "name": "CHICKEN OYSTER SAUCE",
+        "image": "cat-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 900
+          },
+          {
+            "label": "Full",
+            "price": 1680
+          }
+        ]
+      },
+      {
+        "id": 65,
+        "name": "CHICKEN WITH ALMONDS",
+        "image": "cat-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 950
+          },
+          {
+            "label": "Full",
+            "price": 1780
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": "rice",
+    "title": "Rice",
+    "items": [
+      {
+        "id": 67,
+        "name": "BELL \"N\" TELL SPECIAL FRIED RICE",
+        "image": "cat-rice.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 780
+          },
+          {
+            "label": "Full",
+            "price": 1350
+          }
+        ]
+      },
+      {
+        "id": 69,
+        "name": "VEGETABLE RICE",
+        "image": "cat-rice.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 550
+          },
+          {
+            "label": "Full",
+            "price": 950
+          }
+        ]
+      },
+      {
+        "id": 71,
+        "name": "EGG FRIED RICE",
+        "image": "cat-rice.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 600
+          },
+          {
+            "label": "Full",
+            "price": 1050
+          }
+        ]
+      },
+      {
+        "id": 73,
+        "name": "CHICKEN FRIED RICE",
+        "image": "cat-rice.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 630
+          },
+          {
+            "label": "Full",
+            "price": 1150
+          }
+        ]
+      },
+      {
+        "id": 75,
+        "name": "CHICKEN MASALA RICE",
+        "image": "cat-rice.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 630
+          },
+          {
+            "label": "Full",
+            "price": 1150
+          }
+        ]
+      },
+      {
+        "id": 77,
+        "name": "CHICKEN SHASHLIC (With Masala Rice)",
+        "price": 1200,
+        "image": "cat-rice.webp"
+      }
+    ]
+  },
+  {
+    "categoryId": "noodles",
+    "title": "Noodles",
+    "items": [
+      {
+        "id": 78,
+        "name": "BELL \"N\" TELL SPECIAL CHOWMIEN",
+        "image": "cat-noodles.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 880
+          },
+          {
+            "label": "Full",
+            "price": 1520
+          }
+        ]
+      },
+      {
+        "id": 80,
+        "name": "VEGETABLE CHOWMIEN",
+        "image": "cat-noodles.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 600
+          },
+          {
+            "label": "Full",
+            "price": 1100
+          }
+        ]
+      },
+      {
+        "id": 82,
+        "name": "CHICKEN CHOWMIEN",
+        "image": "cat-noodles.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 780
+          },
+          {
+            "label": "Full",
+            "price": 1400
+          }
+        ]
+      },
+      {
+        "id": 84,
+        "name": "THAI CHOWMIEN",
+        "image": "cat-noodles.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 780
+          },
+          {
+            "label": "Full",
+            "price": 1400
+          }
+        ]
+      },
+      {
+        "id": 86,
+        "name": "FISH CHOWMIEN",
+        "image": "cat-noodles.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 880
+          },
+          {
+            "label": "Full",
+            "price": 1600
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": "chopsuey",
+    "title": "Chopsuey",
+    "items": [
+      {
+        "id": 88,
+        "name": "BELL \"N\" TELL SPECIAL CHOPSUEY",
+        "price": 1500,
+        "image": "cat-chopsuey.webp"
+      },
+      {
+        "id": 89,
+        "name": "AMERICAN CHOPSUEY",
+        "price": 1300,
+        "image": "cat-chopsuey.webp"
+      },
+      {
+        "id": 90,
+        "name": "CHICKEN CHOPSUEY",
+        "price": 1300,
+        "image": "cat-chopsuey.webp"
+      }
+    ]
+  },
+  {
+    "categoryId": "burgers",
+    "title": "Burgers",
+    "items": [
+      {
+        "id": 91,
+        "name": "BELL \"N\" TELL SPECIAL DOUBLE DECKER BURGER (With Salad & Fries)",
+        "price": 650,
+        "image": "cat-burgers.webp"
+      },
+      {
+        "id": 92,
+        "name": "MEGA CHICKEN BURGER (With Salad & Fries)",
+        "price": 300,
+        "image": "cat-burgers.webp"
+      },
+      {
+        "id": 93,
+        "name": "MEGA CHICKEN BURGER WITH CHEESE (With Salad & Fries)",
+        "price": 350,
+        "image": "cat-burgers.webp"
+      },
+      {
+        "id": 94,
+        "name": "MEGA BREAST CHICKEN BURGER (With Salad & Fries)",
+        "price": 450,
+        "image": "cat-burgers.webp"
+      },
+      {
+        "id": 95,
+        "name": "MEGA BREAST CHICKEN BURGER WITH CHEESE (With Salad & Fries)",
+        "price": 500,
+        "image": "cat-burgers.webp"
+      },
+      {
+        "id": 96,
+        "name": "FRENCH CHICKEN BURGER (With Salad & Fries)",
+        "price": 350,
+        "image": "cat-burgers.webp"
+      },
+      {
+        "id": 97,
+        "name": "FRENCH CHICKEN BURGER WITH CHEESE (With Salad & Fries)",
+        "price": 400,
+        "image": "cat-burgers.webp"
+      },
+      {
+        "id": 98,
+        "name": "MEGA FISH BURGER (With Salad & Fries)",
+        "price": 600,
+        "image": "cat-burgers.webp"
+      },
+      {
+        "id": 99,
+        "name": "MEGA FISH BURGER WITH CHEESE (With Salad & Fries)",
+        "price": 650,
+        "image": "cat-burgers.webp"
+      },
+      {
+        "id": 100,
+        "name": "FRENCH FISH BURGER (With Salad & Fries)",
+        "price": 650,
+        "image": "cat-burgers.webp"
+      },
+      {
+        "id": 101,
+        "name": "FRENCH FISH BURGER WITH CHEESE (With Salad & Fries)",
+        "price": 700,
+        "image": "cat-burgers.webp"
+      },
+      {
+        "id": 102,
+        "name": "ZINGER BURGER (With Salad & Fries)",
+        "price": 430,
+        "image": "cat-burgers.webp"
+      },
+      {
+        "id": 103,
+        "name": "ZINGER BURGER WITH CHEESE (With Salad & Fries)",
+        "price": 480,
+        "image": "cat-burgers.webp"
+      }
+    ]
+  },
+  {
+    "categoryId": "sandwiches",
+    "title": "Sandwiches",
+    "items": [
+      {
+        "id": 104,
+        "name": "CALIFORNIA CLUB SANDWICH (With Salad & Fries)",
+        "price": 600,
+        "image": "cat-sandwiches.webp"
+      },
+      {
+        "id": 105,
+        "name": "CHICKEN SALAD SANDWICH (With Salad & Fries)",
+        "price": 500,
+        "image": "cat-sandwiches.webp"
+      },
+      {
+        "id": 106,
+        "name": "BREAST CHICKEN SANDWICH (With Salad & Fries)",
+        "price": 630,
+        "image": "cat-sandwiches.webp"
+      },
+      {
+        "id": 107,
+        "name": "EXECUTIVE CHICKEN SANDWICH (With Salad & Fries)",
+        "price": 650,
+        "image": "cat-sandwiches.webp"
+      },
+      {
+        "id": 108,
+        "name": "STUFFED CHICKEN (With Salad & Fries)",
+        "price": 800,
+        "image": "cat-sandwiches.webp"
+      },
+      {
+        "id": 109,
+        "name": "CHICKEN MUSHROOM OMLETE",
+        "price": 800,
+        "image": "cat-sandwiches.webp"
+      }
+    ]
+  },
+  {
+    "categoryId": "english-food",
+    "title": "English Food",
+    "items": [
+      {
+        "id": 110,
+        "name": "GRILLED CHICKEN SHASHLIC",
+        "price": 1100,
+        "image": "cat-english-food.webp",
+        "description": "Hot Taste Served with Egg Fried Rice, Tender Pieces of Marinated Chicken, & Vegetables Grilled"
+      },
+      {
+        "id": 111,
+        "name": "CHICKEN MEXICANA",
+        "price": 1100,
+        "image": "cat-english-food.webp",
+        "description": "With Oyster Sauce Served With Garlic Rice, Marinated Pieces of Chicken Cooked in Tangy Tomato Sauce"
+      },
+      {
+        "id": 112,
+        "name": "CHICKEN BARCELONA",
+        "price": 1100,
+        "image": "cat-english-food.webp",
+        "description": "Sliced Chicken Cooked in Herbs & Vegetables in Different Mediterranean Sauce Served With White Rice"
+      }
+    ]
+  },
+  {
+    "categoryId": "sizzling-steaks-chicken",
+    "title": "Sizzling Steaks (Chicken)",
+    "items": [
+      {
+        "id": 113,
+        "name": "PEPPER STEAK",
+        "price": 1200,
+        "image": "cat-chicken.webp"
+      },
+      {
+        "id": 114,
+        "name": "MUSHROOM STEAK",
+        "price": 1200,
+        "image": "cat-chicken.webp"
+      },
+      {
+        "id": 115,
+        "name": "GARLIC STEAK",
+        "price": 1200,
+        "image": "cat-chicken.webp"
+      },
+      {
+        "id": 116,
+        "name": "HAWAIIAN STEAK",
+        "price": 1200,
+        "image": "cat-chicken.webp"
+      },
+      {
+        "id": 117,
+        "name": "AMERICAN STEAK",
+        "price": 1200,
+        "image": "cat-chicken.webp"
+      },
+      {
+        "id": 118,
+        "name": "ITALIAN STEAK",
+        "price": 1200,
+        "image": "cat-chicken.webp"
+      },
+      {
+        "id": 119,
+        "name": "MEXICANA STEAK",
+        "price": 1200,
+        "image": "cat-chicken.webp"
+      }
+    ]
+  },
+  {
+    "categoryId": "pakistani-food-chicken",
+    "title": "Pakistani Food (Chicken)",
+    "items": [
+      {
+        "id": 120,
+        "name": "BELL \"N\" TELL SPECIAL CHICKEN WHITE HANDI",
+        "image": "cat-pakistani-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 1000
+          },
+          {
+            "label": "Full",
+            "price": 1900
+          }
+        ]
+      },
+      {
+        "id": 122,
+        "name": "CHICKEN ACHARI HANDI",
+        "image": "cat-pakistani-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 1000
+          },
+          {
+            "label": "Full",
+            "price": 1900
+          }
+        ]
+      },
+      {
+        "id": 124,
+        "name": "CHICKEN BONELESS HANDI",
+        "image": "cat-pakistani-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 950
+          },
+          {
+            "label": "Full",
+            "price": 1850
+          }
+        ]
+      },
+      {
+        "id": 126,
+        "name": "CHICKEN ACHARI MASALA",
+        "price": 1100,
+        "image": "cat-pakistani-chicken.webp"
+      },
+      {
+        "id": 127,
+        "name": "BELL \"N\" TELL SPECIAL CHICKEN BUTTER BALTI",
+        "price": 1500,
+        "image": "cat-pakistani-chicken.webp"
+      },
+      {
+        "id": 128,
+        "name": "CHICKEN WHITE KARAHI",
+        "image": "cat-pakistani-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 1000
+          },
+          {
+            "label": "Full",
+            "price": 1900
+          }
+        ]
+      },
+      {
+        "id": 130,
+        "name": "CHICKEN KARAHI",
+        "image": "cat-pakistani-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 950
+          },
+          {
+            "label": "Full",
+            "price": 1850
+          }
+        ]
+      },
+      {
+        "id": 132,
+        "name": "BATAIR KARAHI",
+        "image": "cat-pakistani-chicken.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 800
+          },
+          {
+            "label": "Full",
+            "price": 1600
+          }
+        ]
+      },
+      {
+        "id": 134,
+        "name": "CHICKEN HARI MIRCH",
+        "price": 1150,
+        "image": "cat-pakistani-chicken.webp"
+      },
+      {
+        "id": 135,
+        "name": "CHICKEN SHAHJAHANI",
+        "price": 1100,
+        "image": "cat-pakistani-chicken.webp"
+      },
+      {
+        "id": 136,
+        "name": "ARABIAN CHICKEN",
+        "price": 1150,
+        "image": "cat-pakistani-chicken.webp"
+      },
+      {
+        "id": 137,
+        "name": "CHICKEN KABAB MASALA",
+        "price": 1100,
+        "image": "cat-pakistani-chicken.webp"
+      },
+      {
+        "id": 138,
+        "name": "CHICKEN GINGER",
+        "price": 1100,
+        "image": "cat-pakistani-chicken.webp"
+      },
+      {
+        "id": 139,
+        "name": "CHICKEN JALFRAZY",
+        "price": 1100,
+        "image": "cat-pakistani-chicken.webp"
+      },
+      {
+        "id": 140,
+        "name": "CHICKEN GREEN MASALA",
+        "price": 1150,
+        "image": "cat-pakistani-chicken.webp"
+      },
+      {
+        "id": 141,
+        "name": "MADRASI CHICKEN",
+        "price": 1150,
+        "image": "cat-pakistani-chicken.webp"
+      },
+      {
+        "id": 142,
+        "name": "SHAHI DAL",
+        "price": 700,
+        "image": "cat-pakistani-chicken.webp"
+      },
+      {
+        "id": 143,
+        "name": "DAL FRIED",
+        "price": 350,
+        "image": "cat-pakistani-chicken.webp"
+      },
+      {
+        "id": 144,
+        "name": "CHICKEN MIX VEGETABLE",
+        "price": 650,
+        "image": "cat-pakistani-chicken.webp"
+      },
+      {
+        "id": 145,
+        "name": "MIX VEGETABLE",
+        "price": 350,
+        "image": "cat-pakistani-chicken.webp"
+      },
+      {
+        "id": 146,
+        "name": "TAWA CHICKEN",
+        "price": 1300,
+        "image": "cat-pakistani-chicken.webp"
+      }
+    ]
+  },
+  {
+    "categoryId": "pakistani-food-mutton",
+    "title": "Pakistani Food (Mutton)",
+    "items": [
+      {
+        "id": 147,
+        "name": "BELL \"N\" TELL SPECIAL MUTTON HANDI",
+        "image": "cat-pakistani-mutton.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 2300
+          },
+          {
+            "label": "Full",
+            "price": 4400
+          }
+        ]
+      },
+      {
+        "id": 149,
+        "name": "MUTTON HANDI BONELESS",
+        "image": "cat-pakistani-mutton.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 2250
+          },
+          {
+            "label": "Full",
+            "price": 4300
+          }
+        ]
+      },
+      {
+        "id": 151,
+        "name": "MUTTON GREEN CHILLI LEMON",
+        "image": "cat-pakistani-mutton.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 2250
+          },
+          {
+            "label": "Full",
+            "price": 4300
+          }
+        ]
+      },
+      {
+        "id": 153,
+        "name": "MUTTON WHITE KARAHI",
+        "image": "cat-pakistani-mutton.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 2200
+          },
+          {
+            "label": "Full",
+            "price": 4200
+          }
+        ]
+      },
+      {
+        "id": 155,
+        "name": "MUTTON KARAHI",
+        "image": "cat-pakistani-mutton.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 2300
+          },
+          {
+            "label": "Full",
+            "price": 4400
+          }
+        ]
+      },
+      {
+        "id": 157,
+        "name": "MUTTON ACHARI HANDI BONELESS",
+        "image": "cat-pakistani-mutton.webp",
+        "variants": [
+          {
+            "label": "Half",
+            "price": 2300
+          },
+          {
+            "label": "Full",
+            "price": 4300
+          }
+        ]
+      },
+      {
+        "id": 159,
+        "name": "MUTTON ACHARI MASALA WITH BONE",
+        "price": 2000,
+        "image": "cat-pakistani-mutton.webp"
+      },
+      {
+        "id": 160,
+        "name": "MUTTON HARI MIRCH",
+        "price": 2000,
+        "image": "cat-pakistani-mutton.webp"
+      },
+      {
+        "id": 161,
+        "name": "MUTTON SHAHJAHANI",
+        "price": 2000,
+        "image": "cat-pakistani-mutton.webp"
+      }
+    ]
+  },
+  {
+    "categoryId": "bar-b-q",
+    "title": "Bar B.Q.",
+    "items": [
+      {
+        "id": 162,
+        "name": "CHICKEN TIKKA PIECE (1 Piece)",
+        "price": 470,
+        "image": "cat-bar-bq.webp"
+      },
+      {
+        "id": 163,
+        "name": "CHICKEN ARABIAN TIKKA PIECE (1 Piece)",
+        "price": 490,
+        "image": "cat-bar-bq.webp"
+      },
+      {
+        "id": 164,
+        "name": "CHICKEN TAWA PIECE (1 Piece with 1 Masala Roti)",
+        "price": 500,
+        "image": "cat-bar-bq.webp"
+      },
+      {
+        "id": 165,
+        "name": "CHICKEN GREEN BOTI (12 Pieces)",
+        "price": 1300,
+        "image": "cat-bar-bq.webp"
+      },
+      {
+        "id": 166,
+        "name": "CHICKEN BOTI (12 Pieces)",
+        "price": 1250,
+        "image": "cat-bar-bq.webp"
+      },
+      {
+        "id": 167,
+        "name": "CHICKEN MALAI BOTI (14 Pieces)",
+        "price": 1350,
+        "image": "cat-bar-bq.webp"
+      },
+      {
+        "id": 168,
+        "name": "CHICKEN ACHARI BOTI (12 Pieces)",
+        "price": 1300,
+        "image": "cat-bar-bq.webp"
+      },
+      {
+        "id": 169,
+        "name": "CHICKEN RESHMI BOTI (12 Pieces)",
+        "price": 1350,
+        "image": "cat-bar-bq.webp"
+      },
+      {
+        "id": 170,
+        "name": "CHICKEN BEHARI BOTI (12 Pieces)",
+        "price": 1350,
+        "image": "cat-bar-bq.webp"
+      },
+      {
+        "id": 171,
+        "name": "CHICKEN KASTOORI BOTI (10 Pieces)",
+        "price": 1400,
+        "image": "cat-bar-bq.webp"
+      },
+      {
+        "id": 172,
+        "name": "RAJISTANI BOTI (12 Pieces)",
+        "price": 1300,
+        "image": "cat-bar-bq.webp"
+      },
+      {
+        "id": 173,
+        "name": "LABANESE KABAB (9 Pieces)",
+        "price": 1500,
+        "image": "cat-bar-bq.webp"
+      },
+      {
+        "id": 174,
+        "name": "MAKHMALI KABAB (12 Pieces)",
+        "price": 1500,
+        "image": "cat-bar-bq.webp"
+      },
+      {
+        "id": 175,
+        "name": "CHICKEN SEEKH KABAB (6 Pieces)",
+        "price": 1200,
+        "image": "cat-bar-bq.webp"
+      },
+      {
+        "id": 176,
+        "name": "CHICKEN RESHMI KABAB (6 Pieces)",
+        "price": 1400,
+        "image": "cat-bar-bq.webp"
+      },
+      {
+        "id": 177,
+        "name": "CHICKEN KALMI TIKKA (6 Pieces)",
+        "price": 1250,
+        "image": "cat-bar-bq.webp"
+      },
+      {
+        "id": 178,
+        "name": "FISH TIKKA (10 Pieces)",
+        "price": 2100,
+        "image": "cat-bar-bq.webp"
+      },
+      {
+        "id": 179,
+        "name": "Pizza Kabab",
+        "price": 1300,
+        "image": "cat-bar-bq.webp"
+      },
+      {
+        "id": 180,
+        "name": "Mughlai Boti",
+        "price": 1250,
+        "image": "cat-bar-bq.webp"
+      },
+      {
+        "id": 181,
+        "name": "Lahori Boti",
+        "price": 1250,
+        "image": "cat-bar-bq.webp"
+      },
+      {
+        "id": 182,
+        "name": "Afghani Kabab",
+        "price": 1250,
+        "image": "cat-bar-bq.webp"
+      }
+    ]
+  },
+  {
+    "categoryId": "special-deals",
+    "title": "Special Deals",
+    "items": [
+      {
+        "id": 183,
+        "name": "Special Platter (2-ps)",
+        "price": 1350,
+        "image": "deal-combo.webp",
+        "description": "Chicken Rice, Chicken Manchurian, Dhaka Chicken"
+      },
+      {
+        "id": 184,
+        "name": "Special Bar B.Q Platter (4-ps)",
+        "price": 4000,
+        "image": "deal-combo.webp",
+        "description": "Chicken Kabab (4 Piece), Rajistani Boti (8 Piece), Chicken Tikka Boti (8 Piece), Fish Tikka (4 Piece), Chicken Kalmi Tikka (4 Piece)"
+      },
+      {
+        "id": 185,
+        "name": "Special Platter (2-ps)",
+        "price": 1400,
+        "image": "deal-combo.webp",
+        "description": "Chicken Chowmein, Chicken Manchurian, Dhaka Chicken"
+      },
+      {
+        "id": 186,
+        "name": "Special Platter (4-ps)",
+        "price": 4000,
+        "image": "deal-combo.webp",
+        "description": "Chicken Handi, Chicken Rice, Chicken Malai Boti (8 Pcs), Bread Basket (Roti, Nan), Raita Salad"
+      },
+      {
+        "id": 187,
+        "name": "Kabli Platter (2-Ps)",
+        "price": 1450,
+        "image": "deal-combo.webp",
+        "description": "Afghani Palao, Chicken Kabab (2 piece), Lahori Boti (2 piece), Mughlai Boti (2 piece)"
+      },
+      {
+        "id": 188,
+        "name": "Special Platter (2-ps)",
+        "price": 1500,
+        "image": "deal-combo.webp",
+        "description": "Chicken Chilli Dry, Chicken Black Pepper Chilli, Chicken Rice"
+      },
+      {
+        "id": 189,
+        "name": "Special Bar B.Q Platter (4-ps)",
+        "price": 6300,
+        "image": "deal-combo.webp",
+        "description": "Chicken Kabab (6 Piece), Rajistani Boti (12 Piece), Chicken Tikka Boti (12 Piece), Fish Tikka (8 Piece), Chicken Kalmi Tikka (6 Piece)"
+      },
+      {
+        "id": 190,
+        "name": "Special Platter (2-ps)",
+        "price": 1800,
+        "image": "deal-combo.webp",
+        "description": "Chicken Kabab (2 Piece), Chicken Tikka Boti (2 Piece), Chicken Hari Mirch, Bread Basket (Roti, Roghani Nan), Raita"
+      },
+      {
+        "id": 191,
+        "name": "3 In One Regular (Take Away)",
+        "price": 1250,
+        "image": "deal-combo.webp",
+        "description": "Rice, Manchurian, Dhaka Chicken"
+      },
+      {
+        "id": 192,
+        "name": "3 In One Special (Take Away)",
+        "price": 1300,
+        "image": "deal-combo.webp",
+        "description": "Chowmein, Manchurian, Dhaka Chicken"
+      }
+    ]
+  },
+  {
+    "categoryId": "tandoor",
+    "title": "Tandoor",
+    "items": [
+      {
+        "id": 193,
+        "name": "Salad",
+        "price": 100,
+        "image": "cat-tandoor.webp"
+      },
+      {
+        "id": 194,
+        "name": "Raita",
+        "price": 100,
+        "image": "cat-tandoor.webp"
+      },
+      {
+        "id": 195,
+        "name": "Roti (Per Head) - Special",
+        "price": 80,
+        "image": "cat-tandoor.webp"
+      },
+      {
+        "id": 196,
+        "name": "Masala Roti (Per Piece)",
+        "price": 70,
+        "image": "cat-tandoor.webp"
+      },
+      {
+        "id": 197,
+        "name": "Ginger Nan (Per Piece)",
+        "price": 100,
+        "image": "cat-tandoor.webp"
+      },
+      {
+        "id": 198,
+        "name": "Garlic Nan (Per Piece)",
+        "price": 100,
+        "image": "cat-tandoor.webp"
+      },
+      {
+        "id": 199,
+        "name": "Roghani Nan (Per Piece) - Special",
+        "price": 90,
+        "image": "cat-tandoor.webp"
+      },
+      {
+        "id": 200,
+        "name": "Tandoori Paratha (Per Piece)",
+        "price": 80,
+        "image": "cat-tandoor.webp"
+      },
+      {
+        "id": 201,
+        "name": "Variety of Salad Per Plate",
+        "price": 450,
+        "image": "cat-tandoor.webp"
+      },
+      {
+        "id": 202,
+        "name": "Variety of Salad Per Bowl",
+        "price": 850,
+        "image": "cat-tandoor.webp"
+      }
+    ]
+  },
+  {
+    "categoryId": "royal-drinks",
+    "title": "Royal Drinks",
+    "items": [
+      {
+        "id": 203,
+        "name": "Pina Colada",
+        "price": 350,
+        "image": "cat-royal-drinks.webp"
+      },
+      {
+        "id": 204,
+        "name": "Pink Lady",
+        "price": 350,
+        "image": "cat-royal-drinks.webp"
+      },
+      {
+        "id": 205,
+        "name": "Hawaiian Dream",
+        "price": 350,
+        "image": "cat-royal-drinks.webp"
+      },
+      {
+        "id": 206,
+        "name": "Singapore Supreme",
+        "price": 350,
+        "image": "cat-royal-drinks.webp"
+      },
+      {
+        "id": 207,
+        "name": "Fruit Punch",
+        "price": 350,
+        "image": "cat-royal-drinks.webp"
+      },
+      {
+        "id": 208,
+        "name": "Peach Mariner",
+        "price": 350,
+        "image": "cat-royal-drinks.webp"
+      }
+    ]
+  },
+  {
+    "categoryId": "ice-cream",
+    "title": "Ice Cream",
+    "items": [
+      {
+        "id": 209,
+        "name": "BELL \"N\" TELL SPECIAL SURPRISE ICE CREAM",
+        "price": 500,
+        "image": "cat-ice-cream.webp"
+      },
+      {
+        "id": 210,
+        "name": "BELL \"N\" TELL SPECIAL CLUB TUTTI FRUTTI",
+        "price": 500,
+        "image": "cat-ice-cream.webp"
+      },
+      {
+        "id": 211,
+        "name": "Vanilla",
+        "price": 210,
+        "image": "cat-ice-cream.webp"
+      },
+      {
+        "id": 212,
+        "name": "Kulfa",
+        "price": 210,
+        "image": "cat-ice-cream.webp"
+      },
+      {
+        "id": 213,
+        "name": "Pistachio",
+        "price": 210,
+        "image": "cat-ice-cream.webp"
+      },
+      {
+        "id": 214,
+        "name": "Mango",
+        "price": 210,
+        "image": "cat-ice-cream.webp"
+      },
+      {
+        "id": 215,
+        "name": "Fruit Strawberry",
+        "price": 210,
+        "image": "cat-ice-cream.webp"
+      },
+      {
+        "id": 216,
+        "name": "Chocolate Chip",
+        "price": 210,
+        "image": "cat-ice-cream.webp"
+      },
+      {
+        "id": 217,
+        "name": "Cramel Crunch",
+        "price": 210,
+        "image": "cat-ice-cream.webp"
+      },
+      {
+        "id": 218,
+        "name": "Tuti Fruti",
+        "price": 400,
+        "image": "cat-ice-cream.webp"
+      },
+      {
+        "id": 219,
+        "name": "Cold Coffee with Ice Cream",
+        "price": 400,
+        "image": "cat-ice-cream.webp"
+      }
+    ]
+  },
+  {
+    "categoryId": "seasonal-fresh-juices",
+    "title": "Seasonal Fresh Juices",
+    "items": [
+      {
+        "id": 220,
+        "name": "Falsa",
+        "price": 250,
+        "image": "cat-juices.webp"
+      },
+      {
+        "id": 221,
+        "name": "Strawberry",
+        "price": 250,
+        "image": "cat-juices.webp"
+      },
+      {
+        "id": 222,
+        "name": "Mix Fruit",
+        "price": 300,
+        "image": "cat-juices.webp"
+      },
+      {
+        "id": 223,
+        "name": "Apple",
+        "price": 300,
+        "image": "cat-juices.webp"
+      },
+      {
+        "id": 224,
+        "name": "Peach",
+        "price": 300,
+        "image": "cat-juices.webp"
+      }
+    ]
+  },
+  {
+    "categoryId": "milk-shakes",
+    "title": "Milk Shakes",
+    "items": [
+      {
+        "id": 225,
+        "name": "BELL \"N\" TELL SPECIAL POWER SHAKE",
+        "price": 400,
+        "image": "cat-milk-shakes.webp"
+      },
+      {
+        "id": 226,
+        "name": "Banana",
+        "price": 250,
+        "image": "cat-milk-shakes.webp"
+      },
+      {
+        "id": 227,
+        "name": "Mango",
+        "price": 300,
+        "image": "cat-milk-shakes.webp"
+      },
+      {
+        "id": 228,
+        "name": "Apple",
+        "price": 300,
+        "image": "cat-milk-shakes.webp"
+      },
+      {
+        "id": 229,
+        "name": "Strawberry",
+        "price": 300,
+        "image": "cat-milk-shakes.webp"
+      },
+      {
+        "id": 230,
+        "name": "Mix Fruit",
+        "price": 300,
+        "image": "cat-milk-shakes.webp"
+      },
+      {
+        "id": 231,
+        "name": "Peach",
+        "price": 300,
+        "image": "cat-milk-shakes.webp"
+      },
+      {
+        "id": 232,
+        "name": "Vanilla",
+        "price": 350,
+        "image": "cat-milk-shakes.webp"
+      },
+      {
+        "id": 233,
+        "name": "Chocolate",
+        "price": 350,
+        "image": "cat-milk-shakes.webp"
+      }
+    ]
+  },
+  {
+    "categoryId": "cold-drinks",
+    "title": "Cold Drinks",
+    "items": [
+      {
+        "id": 234,
+        "name": "Soft Drink (Pepsi, 7up, Mirinda, Dew)",
+        "price": 80,
+        "image": "cat-cold-drinks.webp"
+      },
+      {
+        "id": 235,
+        "name": "Soft Drink Tin",
+        "price": 130,
+        "image": "cat-cold-drinks.webp"
+      },
+      {
+        "id": 236,
+        "name": "Soft Drink (Diet)",
+        "price": 130,
+        "image": "cat-cold-drinks.webp"
+      },
+      {
+        "id": 237,
+        "name": "Mineral Water (Large)",
+        "price": 95,
+        "image": "cat-cold-drinks.webp"
+      },
+      {
+        "id": 238,
+        "name": "Mineral Water (Small)",
+        "price": 60,
+        "image": "cat-cold-drinks.webp"
+      },
+      {
+        "id": 239,
+        "name": "Fresh Lemon with Soda",
+        "price": 120,
+        "image": "cat-cold-drinks.webp"
+      },
+      {
+        "id": 240,
+        "name": "Fresh Lemon with Soda (Diet)",
+        "price": 150,
+        "image": "cat-cold-drinks.webp"
+      },
+      {
+        "id": 241,
+        "name": "Spanish Margarita",
+        "price": 200,
+        "image": "cat-cold-drinks.webp"
+      },
+      {
+        "id": 242,
+        "name": "Mint Margarita",
+        "price": 200,
+        "image": "cat-cold-drinks.webp"
+      },
+      {
+        "id": 243,
+        "name": "Coca-Cola",
+        "image": "cat-cold-drinks.webp",
+        "variants": [
+          {
+            "label": "Regular (250ml)",
+            "price": 80
+          },
+          {
+            "label": "1.5 Liter",
+            "price": 250
+          }
+        ]
+      },
+      {
+        "id": 244,
+        "name": "Sprite",
+        "image": "cat-cold-drinks.webp",
+        "variants": [
+          {
+            "label": "Regular (250ml)",
+            "price": 80
+          },
+          {
+            "label": "1.5 Liter",
+            "price": 250
+          }
+        ]
+      },
+      {
+        "id": 245,
+        "name": "Fanta",
+        "image": "cat-cold-drinks.webp",
+        "variants": [
+          {
+            "label": "Regular (250ml)",
+            "price": 80
+          },
+          {
+            "label": "1.5 Liter",
+            "price": 250
+          }
+        ]
+      },
+      {
+        "id": 246,
+        "name": "Mirinda",
+        "image": "cat-cold-drinks.webp",
+        "variants": [
+          {
+            "label": "Regular (250ml)",
+            "price": 80
+          },
+          {
+            "label": "1.5 Liter",
+            "price": 250
+          }
+        ]
+      },
+      {
+        "id": 247,
+        "name": "7Up",
+        "image": "cat-cold-drinks.webp",
+        "variants": [
+          {
+            "label": "Regular (250ml)",
+            "price": 80
+          },
+          {
+            "label": "1.5 Liter",
+            "price": 250
+          }
+        ]
+      },
+      {
+        "id": 248,
+        "name": "Pepsi",
+        "image": "cat-cold-drinks.webp",
+        "variants": [
+          {
+            "label": "Regular (250ml)",
+            "price": 80
+          },
+          {
+            "label": "1.5 Liter",
+            "price": 250
+          }
+        ]
+      }
+    ]
+  }
+]

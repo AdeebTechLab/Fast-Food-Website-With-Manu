@@ -4,9 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Menu Admin — Bell N Tell</title>
-<link rel="icon" href="/assets/favicon.ico?v=20260708b">
-<link rel="stylesheet" href="/admin/admin.css">
+<title>Domino Fazilpur | Menu Manager</title>
+<link rel="icon" href="../assets/images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css?v=20260718">
 </head>
 <body>
   <div id="auth-gate" class="auth-gate">Checking session…</div>
@@ -14,30 +18,31 @@
   <div id="app" class="app hidden">
     <header class="topbar">
       <div class="topbar-left">
-        <div class="logo-badge">HS</div>
+        <div class="logo-badge"><img src="../assets/images/Domino Fazilpur png logo.png" alt="Domino Fazilpur"></div>
         <div>
+          <span class="portal-label">Restaurant Portal</span>
           <h1>Menu Manager</h1>
           <p class="signed-in-as">Signed in as <span id="username-label"></span></p>
         </div>
       </div>
+      <div id="banner" class="banner header-banner hidden" role="status" aria-live="polite"></div>
       <div class="topbar-right">
         <span id="save-status" class="save-status"></span>
-        <button id="save-btn" class="btn btn-primary">Save Changes</button>
-        <button id="logout-btn" class="btn btn-ghost">Log Out</button>
+        <button type="button" id="add-category-btn" class="btn btn-secondary">+ Add Category</button>
+        <button type="button" id="save-btn" class="btn btn-primary">Save Changes</button>
+        <button type="button" id="logout-btn" class="btn btn-ghost">Log Out</button>
       </div>
     </header>
 
-    <div id="banner" class="banner hidden"></div>
-
     <main class="main">
-      <div class="toolbar">
-        <div class="add-category-control">
-          <select id="add-category-position" class="add-category-position-select"></select>
-          <button id="add-category-btn" class="btn btn-secondary">+ Add Category</button>
+      <section class="admin-welcome">
+        <div>
+          <span class="welcome-kicker">Domino Fazilpur</span>
+          <h2>Keep your menu fresh.</h2>
+          <p>Update categories, dishes, prices and photos from one simple dashboard.</p>
         </div>
-        <p class="hint">Edit any field below, then click <strong>Save Changes</strong> to publish it to the live site.</p>
-      </div>
-
+        <div class="welcome-stat"><strong>Live Menu</strong><span>Changes publish after saving</span></div>
+      </section>
       <div id="categories-container"></div>
     </main>
   </div>
@@ -47,11 +52,15 @@
     <section class="category-card">
       <div class="category-header">
         <input type="text" class="cat-title-input" placeholder="Category title, e.g. Beverages">
-        <input type="text" class="cat-id-input" placeholder="category-id (used internally)">
-        <button class="btn btn-danger btn-sm delete-category-btn">Delete Category</button>
+        <input type="hidden" class="cat-id-input">
+        <div class="category-order-controls" aria-label="Change category position">
+          <button type="button" class="category-move-btn move-category-up" title="Move category up" aria-label="Move category up">↑ <span>Up</span></button>
+          <button type="button" class="category-move-btn move-category-down" title="Move category down" aria-label="Move category down">↓ <span>Down</span></button>
+        </div>
+        <button type="button" class="btn btn-danger btn-sm delete-category-btn">Delete Category</button>
       </div>
       <div class="items-grid"></div>
-      <button class="btn btn-secondary add-item-btn">+ Add Item</button>
+      <button type="button" class="btn btn-secondary add-item-btn">+ Add Item</button>
     </section>
   </template>
 
@@ -69,9 +78,11 @@
         <input type="text" class="item-name-input" placeholder="Item name">
         <textarea class="item-desc-input" placeholder="Description (optional)" rows="2"></textarea>
 
-        <label class="checkbox-label">
-          <input type="checkbox" class="item-hasvariants-input"> This item has size/price options (e.g. Half &amp; Full)
-        </label>
+        <button type="button" class="options-toggle-btn" aria-expanded="false">
+          <span class="options-toggle-icon">+</span>
+          <span class="options-toggle-text">Add Options</span>
+        </button>
+        <input type="checkbox" class="item-hasvariants-input hidden" tabindex="-1" aria-hidden="true">
 
         <div class="item-row item-price-row">
           <label class="price-label">Rs. <input type="number" class="item-price-input" min="0" step="1"></label>
@@ -79,10 +90,13 @@
         </div>
 
         <label class="checkbox-label discount-toggle-label">
-          <input type="checkbox" class="item-discount-input"> 🏷️ Apply a discount (show old price crossed out)
+          <input type="checkbox" class="item-discount-input"> Old Price
         </label>
         <div class="item-row item-discount-row hidden">
-          <label class="price-label discount-price-label">Old Price Rs. <input type="number" class="item-oldprice-input" min="0" step="1"></label>
+          <label class="price-label discount-price-label">
+            <span>Rs.</span>
+            <input type="number" class="item-oldprice-input" min="0" step="1" placeholder="Enter old price" aria-label="Old price">
+          </label>
         </div>
 
         <div class="item-variants-section hidden">
@@ -91,19 +105,18 @@
             <span class="variant-presets-label">Quick set:</span>
             <button type="button" class="btn btn-secondary btn-sm preset-btn" data-preset="Half,Full">Half / Full</button>
             <button type="button" class="btn btn-secondary btn-sm preset-btn" data-preset="Small,Medium,Large">Small / Medium / Large</button>
+            <button type="button" class="btn btn-secondary btn-sm preset-btn" data-preset="Medium,Large">Medium / Large</button>
+            <button type="button" class="btn btn-secondary btn-sm preset-btn" data-preset="Regular (250ml),1.5 Liter">Regular / 1.5 Liter</button>
             <button type="button" class="btn btn-secondary btn-sm add-variant-btn">+ Add Option</button>
           </div>
           <input type="text" class="item-badge-input item-badge-input-variants" placeholder="Badge (optional), e.g. Best Seller">
         </div>
 
-        <label class="checkbox-label pricefrom-label">
-          <input type="checkbox" class="item-pricefrom-input"> Show price as "From"
-        </label>
         <label class="checkbox-label best-deal-label">
-          <input type="checkbox" class="item-bestdeal-input"> ⭐ Feature in "Best Deals" tab
+          <input type="checkbox" class="item-bestdeal-input"> Hot Deals
         </label>
       </div>
-      <button class="btn btn-danger btn-sm delete-item-btn">Delete</button>
+      <button type="button" class="btn btn-danger btn-sm delete-item-btn">Delete</button>
     </div>
   </template>
 
@@ -116,6 +129,6 @@
     </div>
   </template>
 
-  <script src="/admin/admin.js"></script>
+  <script src="admin.js?v=20260718b"></script>
 </body>
 </html>

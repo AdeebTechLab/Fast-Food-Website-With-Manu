@@ -467,7 +467,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  createBackToTopButton();
+  // Back-to-top button disabled: the shared cart already occupies the
+  // bottom-right action position and only one floating control should show.
   // --- CART & MODAL LOGIC ---
   const CART_KEY = 'fastFoodCart';
 
