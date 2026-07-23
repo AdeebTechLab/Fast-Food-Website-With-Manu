@@ -496,7 +496,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const checkoutBtn = document.getElementById("checkoutBtn");
   const cartSubtotal = document.getElementById("cartSubtotal");
-  const cartTax = document.getElementById("cartTax");
   const cartGrandTotal = document.getElementById("cartGrandTotal");
   const cartPopularList = document.getElementById("cartPopularList");
   const checkoutTime = document.getElementById("checkoutTime");
@@ -679,12 +678,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }).join('');
     }
     
-    let tax = subtotal * 0.15;
-    let grandTotal = subtotal + tax;
+    let grandTotal = subtotal;
 
     if (cartTotalValue) cartTotalValue.textContent = "Rs. " + grandTotal.toFixed(2);
     if (cartSubtotal) cartSubtotal.textContent = "Rs. " + subtotal.toFixed(2);
-    if (cartTax) cartTax.textContent = "Rs. " + tax.toFixed(2);
     if (cartGrandTotal) cartGrandTotal.textContent = "Rs. " + grandTotal.toFixed(2);
   }
 
@@ -809,11 +806,7 @@ document.addEventListener("DOMContentLoaded", function () {
       grandTotal += cItem.totalPrice;
     });
 
-    let tax = grandTotal * 0.15;
-    let finalTotal = grandTotal + tax;
-    text += `\nSubtotal: Rs. ${grandTotal.toFixed(2)}\n`;
-    text += `Tax (15%): Rs. ${tax.toFixed(2)}\n`;
-    text += `*Grand Total: Rs. ${finalTotal.toFixed(2)}*`;
+    text += `\n*Total Amount: Rs. ${grandTotal.toFixed(2)}*`;
 
     const whatsappNumber = '923333103031';
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;

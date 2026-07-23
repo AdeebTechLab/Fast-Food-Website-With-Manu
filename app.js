@@ -1010,17 +1010,13 @@ function updateCartUI() {
         ${renderUpsellCarousel()}
     `;
 
-    const tax = Math.round(subtotal * 0.15);
-    const grandTotal = subtotal + tax;
     const orderType = localStorage.getItem('orderType') || 'Delivery';
     const ready = getReadyTimeText(orderType);
 
     cartFooter.style.display = 'block';
     cartFooter.innerHTML = `
         <div class="cart-summary">
-            <div class="summary-row"><span>${ICON_LIST} Total</span><span>Rs. ${subtotal}</span></div>
-            <div class="summary-row"><span>${ICON_TAG} Tax (15%)</span><span>Rs. ${tax}</span></div>
-            <div class="summary-row grand-total-row"><span>Grand Total</span><span>Rs. ${grandTotal}</span></div>
+            <div class="summary-row grand-total-row"><span>${ICON_LIST} Total Amount</span><span>Rs. ${subtotal}</span></div>
         </div>
         <button class="checkout-btn" onclick="checkoutViaWhatsApp()">Checkout ${ICON_ARROW_RIGHT}</button>
         <p class="ready-time-text">${ready.text}</p>
@@ -1215,8 +1211,6 @@ async function sendOrderToWhatsApp({ name, phone, address, vehicle, plate, table
         return `${index + 1}. *${item.name}${variant}*\n   ${item.qty} x Rs. ${item.price} = *Rs. ${lineTotal}*${note}`;
     }).join('\n\n');
 
-    const tax = Math.round(subtotal * 0.15);
-    const grandTotal = subtotal + tax;
     const ready = getReadyTimeText(orderType);
     const readyPlain = ready.text.replace(/<[^>]*>/g, '');
 
@@ -1249,9 +1243,7 @@ ${detailLines}
 ${lines}
 
 --------------------------------
-*Subtotal:* Rs. ${subtotal}
-*Tax (15%):* Rs. ${tax}
-*GRAND TOTAL: Rs. ${grandTotal}*
+*TOTAL AMOUNT: Rs. ${subtotal}*
 
 *Estimated Time:* ${readyPlain}
 

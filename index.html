@@ -94,6 +94,8 @@
     <!-- CSS stylesheet links -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/order-styles.css" />
+    <link rel="stylesheet" href="assets/css/theme-toggle.css?v=20260719" />
+    <script>(function(){var t=localStorage.getItem('dominoFazilpurTheme');if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)t='dark';document.documentElement.setAttribute('data-theme',t||'light');})();</script>
   </head>
   <!-- Start of body section with "home" ID -->
   <body id="home">
@@ -103,6 +105,11 @@
       <div class="container">
         <!-- Logo link to home section -->
         <a href="#home" id="logo"><img src="assets/images/Domino Fazilpur png logo.png" alt="Domino Fazilpur" /></a>
+
+        <button type="button" class="theme-toggle" aria-label="Switch to dark mode">
+          <svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/></svg>
+        </button>
 
         <!-- Mobile Navigation Toggle button -->
         <button class="nav-toggle" aria-label="Toggle menu">
@@ -122,7 +129,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="menu.html">Menu</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#order" class="btn">Contact Us</a></li>
+            <li><a href="https://drive.google.com/uc?export=download&amp;id=1uJupCjh1egKhllmGH7Qp5nKV27TVd8oQ" class="btn" aria-label="Download Domino Fazilpur app">Download App</a></li>
           </ul>
         </nav>
       </div>
@@ -289,61 +296,61 @@
             <img
               loading="lazy"
               decoding="async"
-              src="assets/images/Food Images/categories_img_01.png"
-              alt="Asian Food"
+              src="assets/images/category-burger.png"
+              alt="Burger"
             />
-            <h3>Asian Food</h3>
-            <p>30 Available</p>
+            <h3>Burger</h3>
+            <p>View Menu</p>
           </article>
           <article class="category-card home-menu-link" onclick="window.location.href='menu.html'" onkeydown="if(event.key==='Enter'||event.key===' ') window.location.href='menu.html'" role="link" tabindex="0">
             <img
               loading="lazy"
               decoding="async"
-              src="assets/images/Food Images/categories_img_02.png"
-              alt="African Food"
+              src="assets/images/category-pizza.png"
+              alt="Pizza"
             />
-            <h3>African Food</h3>
-            <p>60 Available</p>
+            <h3>Pizza</h3>
+            <p>View Menu</p>
           </article>
           <article class="category-card home-menu-link" onclick="window.location.href='menu.html'" onkeydown="if(event.key==='Enter'||event.key===' ') window.location.href='menu.html'" role="link" tabindex="0">
             <img
               loading="lazy"
               decoding="async"
-              src="assets/images/Food Images/categories_img_03.png"
-              alt="Indian Food"
+              src="assets/images/category-chicken-bites.png"
+              alt="Chicken Bites"
             />
-            <h3>Indian Food</h3>
-            <p>43 Available</p>
+            <h3>Chicken Bites</h3>
+            <p>View Menu</p>
           </article>
           <article class="category-card home-menu-link" onclick="window.location.href='menu.html'" onkeydown="if(event.key==='Enter'||event.key===' ') window.location.href='menu.html'" role="link" tabindex="0">
             <img
               loading="lazy"
               decoding="async"
-              src="assets/images/Food Images/categories_img_04.png"
-              alt="Thai Food"
+              src="assets/images/category-fries.png"
+              alt="Fries"
             />
-            <h3>Thai Food</h3>
-            <p>30 Available</p>
+            <h3>Fries</h3>
+            <p>View Menu</p>
           </article>
           <article class="category-card home-menu-link" onclick="window.location.href='menu.html'" onkeydown="if(event.key==='Enter'||event.key===' ') window.location.href='menu.html'" role="link" tabindex="0">
             <img
               loading="lazy"
               decoding="async"
-              src="assets/images/Food Images/categories_img_05.png"
-              alt="Arabian Food"
+              src="assets/images/category-fish-fries.png"
+              alt="Fish Fries"
             />
-            <h3>Arabian Food</h3>
-            <p>30 Available</p>
+            <h3>Fish Fries</h3>
+            <p>View Menu</p>
           </article>
           <article class="category-card home-menu-link" onclick="window.location.href='menu.html'" onkeydown="if(event.key==='Enter'||event.key===' ') window.location.href='menu.html'" role="link" tabindex="0">
             <img
               loading="lazy"
               decoding="async"
-              src="assets/images/Food Images/categories_img_06.png"
-              alt="Chinese"
+              src="assets/images/category-roti.png"
+              alt="Roti"
             />
-            <h3>Chinese</h3>
-            <p>30 Available</p>
+            <h3>Roti</h3>
+            <p>View Menu</p>
           </article>
         </div>
       </div>
@@ -486,29 +493,30 @@
           <div class="about-text">
             <!-- Subheading with highlighted text -->
             <h3>
-              We Make Quality Food <span class="highlight">Since 2010</span>
+              Serving Fazilpur with Pride <span class="highlight">Since 2016</span>
             </h3>
-            <!-- First paragraph about company history -->
+            <div class="about-owner">
+              <span>Owner</span>
+              <strong>Ch Zahoor Ali</strong>
+            </div>
             <p>
-              Founded with a passion for delivering exceptional taste and
-              quality, our restaurant has been serving premium fast food for
-              over a decade. We source only the freshest ingredients and use
-              traditional recipes with a modern twist.
+              Domino Fazilpur is proudly recognized as one of Fazilpur's best
+              restaurants, serving fresh, flavourful and quality food since
+              2016. Under the leadership of Ch Zahoor Ali, the restaurant has
+              earned the trust of local families through honest service,
+              generous portions and consistently delicious taste.
             </p>
-            <!-- Second paragraph about company values -->
             <p>
-              What sets us apart is our commitment to quality and speed. Our
-              chefs prepare your meals with precision and care, ensuring that
-              every bite is a delightful experience. From juicy burgers to
-              crispy chicken, we've perfected the art of fast food.
+              From pizzas and burgers to crispy chicken, hot deals and family
+              meals, every order is prepared with carefully selected
+              ingredients. Our goal is simple: give every customer a clean,
+              welcoming experience, reliable service and food they will want
+              to enjoy again.
             </p>
-            <!-- Call to action button linking to menu -->
-            <a href="menu.html" class="btn">View Our Menu</a>
           </div>
           <!-- Image container -->
           <div class="about-image">
-            <!-- Featured burger image -->
-            <img loading="lazy" decoding="async" src="assets/images/burger.png" alt="Premium Burger" />
+            <img loading="lazy" decoding="async" src="assets/images/owner.jpeg" alt="Ch Zahoor Ali, owner of Domino Fazilpur" />
           </div>
         </div>
       </div>
@@ -850,7 +858,7 @@
               <li><a href="#about">About Us</a></li>
               <li><a href="menu.html">Menu</a></li>
               <li><a href="#testimonials">Testimonials</a></li>
-              <li><a href="#order">Contact Us</a></li>
+              <li><a href="admin/login.html">Login</a></li>
             </ul>
           </div>
 
@@ -1037,10 +1045,6 @@
             <span>Total</span>
             <span id="cartSubtotal">Rs. 0</span>
           </div>
-          <div class="summary-row">
-            <span>Tax (15%)</span>
-            <span id="cartTax">Rs. 0</span>
-          </div>
           <div class="summary-row total">
             <span>Grand Total</span>
             <span id="cartGrandTotal">Rs. 0</span>
@@ -1095,6 +1099,7 @@
     <script src="assets/js/script.js?v=20260718b"></script>
     <script src="assets/js/home-category-products.js?v=20260718c"></script>
     <script src="assets/js/index-shared-cart.js?v=20260718b"></script>
+    <script src="assets/js/theme-toggle.js?v=20260719"></script>
     <!-- End of body section -->
   </body>
   <!-- End of HTML document -->

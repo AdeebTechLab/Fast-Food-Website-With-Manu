@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const cartContainer = document.getElementById("cartItemsContainer");
   const popularContainer = document.getElementById("popularItemsContainer");
   const summaryTotal = document.getElementById("summaryTotal");
-  const summaryTax = document.getElementById("summaryTax");
   const summaryGrandTotal = document.getElementById("summaryGrandTotal");
   const deliveryDate = document.getElementById("deliveryDate");
 
@@ -111,11 +110,9 @@ document.addEventListener("DOMContentLoaded", function () {
       subtotal += cItem.totalPrice;
     });
 
-    const tax = subtotal * 0.15;
-    const grandTotal = subtotal + tax;
+    const grandTotal = subtotal;
 
     summaryTotal.textContent = "Rs. " + subtotal.toFixed(2);
-    summaryTax.textContent = "Rs. " + tax.toFixed(2);
     summaryGrandTotal.textContent = "Rs. " + grandTotal.toFixed(2);
   }
 

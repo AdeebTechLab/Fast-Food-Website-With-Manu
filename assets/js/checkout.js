@@ -113,11 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
         grandTotal += cItem.totalPrice;
       });
 
-      const tax = grandTotal * 0.15;
-      const finalTotal = grandTotal + tax;
-      text += `\nSubtotal: Rs. ${grandTotal.toFixed(2)}\n`;
-      text += `Tax (15%): Rs. ${tax.toFixed(2)}\n`;
-      text += `*Grand Total: Rs. ${finalTotal.toFixed(2)}*`;
+      text += `\n*Total Amount: Rs. ${grandTotal.toFixed(2)}*`;
 
       const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
       window.open(whatsappUrl, "_blank");

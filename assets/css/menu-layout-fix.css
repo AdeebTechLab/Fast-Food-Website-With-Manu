@@ -234,6 +234,30 @@
   transform: translateX(0);
 }
 
+@media (max-width: 700px) {
+  .menu-page .product-detail-modal {
+    max-height: 94dvh;
+    overflow-y: auto;
+  }
+
+  .menu-page .pd-image-side {
+    flex: 0 0 auto;
+    min-height: 0;
+    height: clamp(230px, 42vh, 360px);
+    background: #f3efec;
+  }
+
+  .menu-page .pd-image {
+    object-fit: contain;
+    object-position: center;
+    padding: 6px;
+  }
+
+  html[data-theme="dark"] .menu-page .pd-image-side {
+    background: #181716;
+  }
+}
+
 .menu-page .overlay {
   z-index: 4990;
 }
